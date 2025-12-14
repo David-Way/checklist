@@ -11,6 +11,14 @@
 
 ---
 
+## References
+
+### Technology 
+- [Github Primer Primitives](https://primer.style/product/primitives/)
+- [Github Primer Storybook](https://primer.style/primitives/storybook/?path=/story/color-base-display-scales--all-scales)
+
+---
+
 ## Phased Development Plan: YAML-Driven Conditional Checklist App
 
 ### Assumptions (Explicit)
