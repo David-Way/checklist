@@ -1,4 +1,39 @@
 body {
     --fontShorthand: var(--text-body-shorthand-large);
-    font-family: var(--fontStack-system)
+    font-family: var(--fontStack-system);
+    color: var(--fgColor-default);
+    background-color: var(--bgColor-default);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 24px;
+    margin-bottom: 16px;
+}
+
+h1 {
+    --fontShorthand: var(--text-display-shorthand);
+}
+
+h2 {
+    --fontShorthand: var(text-title-shorthand-large);
+}
+
+h3 {
+    --fontShorthand: var(text-title-shorthand-medium);
+}
+
+h4,
+h5,
+h6 {
+    --fontShorthand: var(text-title-shorthand-small);
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: var(--base-size-16);
 }
