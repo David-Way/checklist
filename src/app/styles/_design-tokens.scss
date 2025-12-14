@@ -1,3 +1,4 @@
+// Primer Design Tokens
 @import '@primer/primitives/dist/css/base/size/size.css';
 @import '@primer/primitives/dist/css/base/typography/typography.css';
 @import '@primer/primitives/dist/css/functional/size/border.css';
@@ -8,5 +9,6 @@
 @import '@primer/primitives/dist/css/functional/size/viewport.css';
 @import '@primer/primitives/dist/css/functional/typography/typography.css';
 
-//THEME
+//THEMES
 @import '@primer/primitives/dist/css/functional/themes/dark-high-contrast.css';
+@import '@primer/primitives/dist/css/functional/themes/light-high-contrast.css';

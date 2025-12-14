@@ -1,4 +1,4 @@
-import './global-styles.scss'; // global-styles
+import './styles/index.scss'; // global-styles
 import { Header } from '@components';
 
 interface AppProps {
