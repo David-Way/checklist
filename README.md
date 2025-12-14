@@ -16,6 +16,8 @@
 ### Technology 
 - [Github Primer Primitives](https://primer.style/product/primitives/)
 - [Github Primer Storybook](https://primer.style/primitives/storybook/?path=/story/color-base-display-scales--all-scales)
+- [js-yaml](www.npmjs.com/package/js-yaml)
+- [react-jsonschema-form](https://github.com/rjsf-team/react-jsonschema-form)
 
 ---
 
@@ -39,16 +41,16 @@
 
 **Goal:** De-risk schema design and conditional logic.
 
-* Define YAML schema (versioned)
-* Define condition syntax and supported operators
-* Define JSON Schema mapping rules
-* Validate RJSF supports required conditional patterns (`dependencies`, `if/then/else`)
-* Accessibility design review (keyboard + SR flows)
+- [ ] Define YAML schema (versioned)
+- [ ] Define condition syntax and supported operators
+- [ ] Define JSON Schema mapping rules
+- [ ] Validate RJSF supports required conditional patterns (`dependencies`, `if/then/else`)
+- [ ] Accessibility design review (keyboard + SR flows)
 
 **Output**
 
-* YAML spec document
-* JSON Schema transformation contract
+- [ ] YAML spec document
+- [ ] JSON Schema transformation contract
 
 ---
 
@@ -56,19 +58,19 @@
 
 **Scope**
 
-* Hardcoded YAML checklist (bundled with app)
-* YAML → JSON Schema conversion
-* Render dynamic checklist via RJSF
-* Conditional display of checklist sections
-* Accessible UI using shadcn/ui
+- [ ] Hardcoded YAML checklist (bundled with app)
+- [ ] YAML → JSON Schema conversion
+- [ ] Render dynamic checklist via RJSF
+- [ ] Conditional display of checklist sections
+- [ ] Accessible UI
 
 **Features**
 
-* YAML parsing with error handling
-* Markdown rendering for descriptions
-* Boolean, enum, and text inputs
-* Conditional logic via JSON Schema `if/then`
-* Basic validation feedback
+- [ ] YAML parsing with error handling
+- [ ] Markdown rendering for descriptions
+- [ ] Boolean, enum, and text inputs
+- [ ] Conditional logic via JSON Schema `if/then`
+- [ ] Basic validation feedback
 
 **Non-Goals**
 
@@ -82,27 +84,22 @@
 
 **Enhancements**
 
-* Upload / paste custom YAML
-* Version validation and migration warnings
-* Themed checklist sections
-* Expandable/collapsible sections
-* Read-only summary view
-* Persist responses in localStorage
-
-**Accessibility**
-
-* Screen-reader optimized conditional announcements
-* Focus management on reveal/hide
+- [ ] Upload / paste custom YAML
+- [ ] Version validation and migration warnings
+- [ ] Themed checklist sections
+- [ ] Expandable/collapsible sections
+- [ ] Read-only summary view
+- [ ] Persist responses in localStorage
 
 ---
 
 #### Phase 3 – Future Enhancements
 
-* Checklist result export (JSON / Markdown / PDF)
-* YAML editor with validation hints
-* Cross-item computed logic
-* Localization support
-* Plugin system for new input types
+- [ ] Checklist result export (JSON / Markdown / PDF)
+- [ ] YAML editor with validation hints
+- [ ] Cross-item computed logic
+- [ ] Localization support
+- [ ] Plugin system for new input types
 
 ---
 
@@ -266,10 +263,10 @@ src/
 
 **State**
 
-* Parsed YAML
-* Generated JSON Schema
-* Form data (RJSF controlled)
-* UI state (errors, expanded sections)
+- [ ] Parsed YAML
+- [ ] Generated JSON Schema
+- [ ] Form data (RJSF controlled)
+- [ ] UI state (errors, expanded sections)
 
 **Flow**
 
