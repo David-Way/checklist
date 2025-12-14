@@ -1,0 +1,198 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/checklist-definition.schema.json",
+  "title": "Checklist Definition Schema",
+  "description": "Schema for YAML-based conditional checklist definitions",
+  "type": "object",
+
+  "required": ["version", "id", "title", "sections"],
+
+  "properties": {
+    "version": {
+      "type": "string",
+      "description": "Checklist definition version",
+      "pattern": "^[0-9]+\\.[0-9]+$"
+    },
+
+    "id": {
+      "type": "string",
+      "description": "Unique checklist identifier",
+      "pattern": "^[a-z0-9-]+$"
+    },
+
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+
+    "description": {
+      "type": "string",
+      "description": "Markdown-supported description"
+    },
+
+    "meta": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "author": { "type": "string" },
+        "lastUpdated": { "type": "string", "format": "date" },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+
+    "sections": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/section" }
+    }
+  },
+
+  "$defs": {
+    "section": {
+      "type": "object",
+      "required": ["id", "title", "items"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9_-]+$"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string",
+          "description": "Markdown-supported section description"
+        },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/item" }
+        }
+      }
+    },
+
+    "item": {
+      "type": "object",
+      "required": ["id", "type", "label"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9_-]+$"
+        },
+
+        "type": {
+          "type": "string",
+          "enum": ["boolean", "string", "enum", "checklist"]
+        },
+
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+
+        "description": {
+          "type": "string",
+          "description": "Markdown-supported rich content"
+        },
+
+        "helpText": {
+          "type": "string",
+          "description": "Short assistive hint text"
+        },
+
+        "required": {
+          "type": "boolean",
+          "default": false
+        },
+
+        "options": {
+          "type": "array",
+          "description": "Required for enum type",
+          "items": {
+            "type": "object",
+            "required": ["value", "label"],
+            "properties": {
+              "value": { "type": ["string", "number"] },
+              "label": { "type": "string" }
+            }
+          }
+        },
+
+        "items": {
+          "type": "array",
+          "description": "Nested checklist items (only for checklist type)",
+          "items": { "$ref": "#/$defs/item" }
+        },
+
+        "when": {
+          "$ref": "#/$defs/condition"
+        }
+      },
+
+      "allOf": [
+        {
+          "if": {
+            "properties": { "type": { "const": "enum" } }
+          },
+          "then": {
+            "required": ["options"]
+          }
+        },
+        {
+          "if": {
+            "properties": { "type": { "const": "checklist" } }
+          },
+          "then": {
+            "required": ["items"]
+          }
+        }
+      ],
+
+      "additionalProperties": false
+    },
+
+    "condition": {
+      "type": "object",
+      "required": ["field"],
+      "properties": {
+        "field": {
+          "type": "string",
+          "description": "ID of the controlling field"
+        },
+
+        "equals": {
+          "type": ["string", "number", "boolean"]
+        },
+
+        "notEquals": {
+          "type": ["string", "number", "boolean"]
+        },
+
+        "in": {
+          "type": "array",
+          "items": {
+            "type": ["string", "number", "boolean"]
+          }
+        },
+
+        "exists": {
+          "type": "boolean"
+        }
+      },
+
+      "oneOf": [
+        { "required": ["equals"] },
+        { "required": ["notEquals"] },
+        { "required": ["in"] },
+        { "required": ["exists"] }
+      ],
+
+      "additionalProperties": false
+    }
+  },
+
+  "additionalProperties": false
+}
