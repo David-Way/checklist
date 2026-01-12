@@ -16,7 +16,11 @@
     "resolveJsonModule": true,
     "jsx": "react-jsx",
     "declaration": true,
-    "declarationDir": "./types"
+    "declarationDir": "./types",
+    "types": ["node"]
   },
-  "include": ["src"]
+  "include": [
+    "src",
+    "./types/declaration.d.ts"
+  ]
 }
