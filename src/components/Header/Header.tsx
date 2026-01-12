@@ -1,4 +1,4 @@
-import './header.scss';
+import './header.module.scss';
 
 // Define the prop types using an interface
 export interface HeaderProps {

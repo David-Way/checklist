@@ -14,7 +14,13 @@
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "declaration": true,
+    "declarationDir": "./types",
+    "types": ["node"]
   },
-  "include": ["src"]
+  "include": [
+    "src",
+    "./types/declaration.d.ts"
+  ]
 }
