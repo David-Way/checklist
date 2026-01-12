@@ -13,6 +13,9 @@
   },
   "dependencies": {
     "@primer/primitives": "^11.3.2",
+    "@rjsf/core": "^6.1.2",
+    "@rjsf/utils": "^6.1.2",
+    "@rjsf/validator-ajv8": "^6.1.2",
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
     "typescript": "^5.9.3"

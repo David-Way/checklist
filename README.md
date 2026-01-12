@@ -41,7 +41,7 @@
 
 **Goal:** De-risk schema design and conditional logic.
 
-- [ ] Define YAML schema (versioned)
+- [x] Define YAML schema (versioned)
 - [ ] Define condition syntax and supported operators
 - [ ] Define JSON Schema mapping rules
 - [ ] Validate RJSF supports required conditional patterns (`dependencies`, `if/then/else`)
