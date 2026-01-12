@@ -1,5 +1,5 @@
 import './styles/index.scss'; // global-styles
-import { Header } from '@components';
+import { FormContainer, Header } from '@components';
 
 interface AppProps {
   
@@ -10,9 +10,7 @@ const App: React.FC<AppProps> = () => {
     <>
       <Header title="Checklist" />
       <main>
-        <p>
-          🏗️
-        </p>
+        <FormContainer title="test" />
       </main>
     </>
   )
