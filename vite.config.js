@@ -14,7 +14,9 @@ export default defineConfig({
 	server: {
 		cors: {
 			// the origin you will be accessing via browser
-			origin: "https://davidway.ie",
+			origin: "https://github.com/",
 		},
 	},
 });
+
+// https://github.com/David-Way/checklist/blob/main/src/data//checklist/1000000.json
