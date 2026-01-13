@@ -1,5 +1,5 @@
-import shell from 'shelljs';
-import path from 'path';
+import shell from "shelljs";
+import path from "path";
 
 //==============
 // Generate index for checklist items
