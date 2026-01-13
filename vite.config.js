@@ -14,7 +14,7 @@ export default defineConfig({
 	server: {
 		cors: {
 			// the origin you will be accessing via browser
-			origin: "https://github.com/",
+			origin: "https://david-way.github.io/",
 		},
 	},
 });
