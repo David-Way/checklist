@@ -31,7 +31,7 @@ jobs:
           git push origin $BRANCH
           git add .
           git commit -m "chore: generated api [skip ci]"
-          git push origin HEAD:main
+          git push --follow-tags origin main
 
       - run: npm run build
 
