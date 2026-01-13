@@ -21,6 +21,9 @@
   },
   "include": [
     "src",
-    "./types/declaration.d.ts"
+    "vite/client",
+    "vitest/globals",
+    "types/declaration.d.ts",
+    "types/vite-env.d.ts"
   ]
 }

@@ -1,20 +1,32 @@
 import "./styles/index.scss"; // global-styles
 import { FormContainer, Header } from "@components";
 import {
-  QueryClient,
-  QueryClientProvider,
-} from '@tanstack/react-query'
-
-const queryClient = new QueryClient();
+	useQuery,
+} from "@tanstack/react-query";
+import { getAllChecklists } from "../api";
 
 const App: React.FC = () => {
+	const { isPending, isError, data, error } = useQuery({
+		queryKey: ["AllChecklists"],
+		queryFn: () => getAllChecklists(),
+	});
+
+	if (isPending) {
+		return <span>Loading all checklists...</span>;
+	}
+
+	if (isError) {
+		return <span>Error: {error.message}</span>;
+	}
+
+	console.log('all checklists', data);
 	return (
-		<QueryClientProvider client={queryClient}>
+		<>
 			<Header title="Checklist" />
 			<main>
 				<FormContainer title="test" />
 			</main>
-		</QueryClientProvider>
+		</>
 	);
 };
 

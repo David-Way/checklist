@@ -3,11 +3,7 @@ import Form from "@rjsf/core";
 import type { RJSFSchema } from "@rjsf/utils";
 import validator from "@rjsf/validator-ajv8";
 import {
-  QueryClient,
-  QueryClientProvider,
-  useMutation,
   useQuery,
-  useQueryClient,
 } from '@tanstack/react-query'
 import { useState } from "react";
 import { getChecklist } from '../../api';
@@ -21,25 +17,43 @@ export interface FormProps {
 }
 
 const schema: RJSFSchema = {
-	title: "Todo",
-	type: "object",
-	required: ["title"],
-	properties: {
-		title: { type: "string", title: "Title", default: "A new task" },
-		done: { type: "boolean", title: "Done?", default: false },
-	},
+  "title": "A registration form",
+  "description": "A simple form example.",
+  "type": "object",
+  "required": [
+    "firstName",
+    "lastName"
+  ],
+  "properties": {
+    "firstName": {
+      "type": "string",
+      "title": "First name",
+      "default": "Chuck"
+    },
+    "lastName": {
+      "type": "boolean",
+      "title": "Last name"
+    },
+    "age": {
+      "type": "boolean",
+      "title": "Age"
+    },
+    "bio": {
+      "type": "boolean",
+      "title": "Bio"
+    }
+  }
 };
 
 const checklistSchema: RJSFSchema = checklistSchemaJSON;
 // const checklistExample = checklistExampleJSON;
-
 const log = (type) => console.log.bind(console, type);
 
 const FormContainer: React.FC<FormProps> = ({ title }) => {
 	const [formData, setFormData] = useState(null);
 	const { isPending, isError, data, error } = useQuery({
 		queryKey: ["checklist"],
-		queryFn: getChecklist(1000000),
+		queryFn: () => getChecklist(2000000),
 	});
 
 	if (isPending) {
@@ -50,13 +64,10 @@ const FormContainer: React.FC<FormProps> = ({ title }) => {
 		return <span>Error: {error.message}</span>;
 	}
 
-	console.log('import.meta.env.MODE', import.meta.env.MODE);
-	console.log('import.meta.env.VITE_APP_API_URL', import.meta.env.VITE_APP_API_URL)
-	console.log('data', data);
 	return (
 		<Form
-			// schema={schema}
-			schema={data}
+			schema={schema}
+			// schema={data}
 			validator={validator}
 			onChange={(event) => setFormData(event.formData)}
 			onSubmit={log("submitted")}
