@@ -9,6 +9,12 @@
 },
 ```
 
+
+---
+
+## Discovery
+- The current checklist definition schema is the schema for a yaml file. I want to use that yaml file to generate a simpler "schema" needed by RJSF.
+
 ---
 
 ## References
