@@ -14,7 +14,9 @@ jobs:
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
+        with:
+          ref: ${{ github.head_ref }}
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -26,12 +28,11 @@ jobs:
       - name: Setup API
         run: |
           npm run generate:api
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git checkout main
+          git config user.name "github-actions[bot]"
+          git config user.email {user.id}+{user.login}@users.noreply.github.co
           git add .
           git commit -m "chore: generated api [skip ci]"
-          git push origin main
+          git push
 
       - run: npm run build
 
