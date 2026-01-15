@@ -13,8 +13,42 @@
 ---
 
 ## Discovery
-- The current checklist definition schema is the schema for a yaml file. I want to use that yaml file to generate a simpler "schema" needed by RJSF.
+- [ ] The current checklist definition schema is the schema for a yaml file. I want to use that yaml file to generate a simpler "schema" needed by RJSF.
+- [ ] Form should use Live omit (onblur) to remove data for conditional fields
+- Example of conditional display of fields
+  https://rjsf-team.github.io/react-jsonschema-form/#eyJmb3JtRGF0YSI6eyJwYXJlbnQiOmZhbHNlLCJjaGlsZCI6MTB9LCJzY2hlbWEiOnsidHlwZSI6Im9iamVjdCIsInByb3BlcnRpZXMiOnsicGFyZW50Ijp7InR5cGUiOiJib29sZWFuIiwiZGVmYXVsdCI6ZmFsc2V9fSwicmVxdWlyZWQiOlsicGFyZW50Il0sImFsbE9mIjpbeyJpZiI6eyJwcm9wZXJ0aWVzIjp7InBhcmVudCI6eyJjb25zdCI6dHJ1ZX19fSwidGhlbiI6eyJwcm9wZXJ0aWVzIjp7ImNoaWxkIjp7InR5cGUiOiJpbnRlZ2VyIiwiZGVmYXVsdCI6MTB9fSwicmVxdWlyZWQiOlsiY2hpbGQiXX19XX0sInVpU2NoZW1hIjp7fSwidGhlbWUiOiJtdWkifQ==
 
+```json
+{
+  "type": "object",
+  "properties": {
+    "parent": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "parent": {
+            "const": true
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "child": {
+            "type": "integer",
+            "default": 10
+          }
+        },
+      }
+    }
+  ]
+}
+
+```
 ---
 
 ## References
