@@ -15,6 +15,7 @@ h5,
 h6 {
     margin-top: 24px;
     margin-bottom: 16px;
+    text-box-trim: trim-both;
 }
 
 h1 {
@@ -23,7 +24,7 @@ h1 {
 
 h2 {
     @include mixins.type-h2();
-    
+
 }
 
 h3 {
@@ -42,4 +43,25 @@ h6 {
 p {
     margin-top: 0;
     margin-bottom: var(--base-size-16);
+    max-width: 72ch;
+}
+
+a {
+    color: var(--fgColor-link);
+
+    :visited {
+        color: var(--fgColor-link);
+    }
+
+    :focus-visible {
+        @include mixins.focus();
+    }
+
+    :hover {
+        text-decoration: underline;
+    }
+
+    :active {
+        color: var(--fgColor-default);
+    }
 }
