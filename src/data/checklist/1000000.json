@@ -1,38 +1,34 @@
 {
-    "version": "1.0.0",
-    "id": "1000000",
-    "title": "Example Checklist",
-    "description": "A placeholder example checklist for development testing",
-    "meta": {
-        "author": "David Way",
-        "lastUpdated": "06/01/2026",
-        "tags": [
-            "test",
-            "example",
-            "placeholder"
-        ]
-    },
-    "sections": [
+  "version": "1.0.0",
+  "id": "1000000",
+  "title": "Example Checklist 1",
+  "description": "A placeholder example checklist for development testing",
+  "meta": {
+    "author": "David Way",
+    "lastUpdated": "06/01/2026",
+    "tags": ["test", "example", "placeholder"]
+  },
+  "sections": [
+    {
+      "id": "uuid-001_section-001",
+      "title": "Section 1",
+      "description": "Section description with a [link](www.davidway.ie)",
+      "items": [
         {
-            "id": "uuid-001_section-001",
-            "title": "Section 1",
-            "description": "Section description with a [link](www.davidway.ie)",
-            "items": [
-                {
-                    "id": "uuid-001_section-001_item-001",
-                    "type": "boolean",
-                    "label": "Item 1",
-                    "description": "Item description with a [link](www.davidway.ie)",
-                    "helpText": "Example help text",
-                    "required": true,
-                    "options": [
-                        {
-                            "value": "1",
-                            "label": "Enum Option 1"
-                        }
-                    ]
-                }
-            ]
+          "id": "uuid-001_section-001_item-001",
+          "type": "boolean",
+          "label": "Item 1",
+          "description": "Item description with a [link](www.davidway.ie)",
+          "helpText": "Example help text",
+          "required": true,
+          "options": [
+            {
+              "value": "1",
+              "label": "Enum Option 1"
+            }
+          ]
         }
-    ]
+      ]
+    }
+  ]
 }
