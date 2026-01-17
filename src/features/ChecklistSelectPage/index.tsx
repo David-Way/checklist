@@ -1,8 +1,7 @@
-import { FlexContainer, Header } from "@components";
+import { getAllChecklists } from "@api";
+import { FlexContainer, Header, List, ListItem, Tag } from "@components";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
-import { getAllChecklists } from "../../api";
-import { List, ListItem } from "../../components";
 
 const ChecklistSelectPage: React.FC = () => {
   const {
@@ -25,7 +24,7 @@ const ChecklistSelectPage: React.FC = () => {
 
   console.log("all checklists", allChecklists);
   return (
-    <>
+    <FlexContainer direction="column" spacing="16" align="stretch">
       <Header title="Checklist" />
       <main>
         <List as="ul">
@@ -34,23 +33,27 @@ const ChecklistSelectPage: React.FC = () => {
             return (
               <ListItem key={checklist.id} link={true}>
                 <Link to={`/cl/${checklist.id}`}>
-                  <h2>{checklist?.title}</h2>
-                  <span>{checklist?.description}</span>
+                  <FlexContainer direction="column" spacing="4">
+                    <h2>{checklist?.title}</h2>
+                    <p>{checklist?.description}</p>
 
-                  {tags && (
-                    <FlexContainer direction="row" spacing="8">
-                      {tags.map((tag) => (
-                        <div key={tag}>{tag}</div>
-                      ))}
-                    </FlexContainer>
-                  )}
+                    {tags && (
+                      <FlexContainer direction="row" spacing="8">
+                        {tags.map((tag) => (
+                          <Tag size="sm" key={tag}>
+                            {tag}
+                          </Tag>
+                        ))}
+                      </FlexContainer>
+                    )}
+                  </FlexContainer>
                 </Link>
               </ListItem>
             );
           })}
         </List>
       </main>
-    </>
+    </FlexContainer>
   );
 };
 
