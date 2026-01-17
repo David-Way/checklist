@@ -65,9 +65,19 @@
     --fontShorthand: var(--text-body-shorthand-large);
     font-family: var(--fontStack-system);
     color: var(--fgColor-default);
-    background-color: var(--bgColor-default);
 }
 
+@mixin type-body-small() {
+    --fontShorthand: var(--text-body-shorthand-medium);
+    font-family: var(--fontStack-system);
+    color: var(--fgColor-default);
+}
+
+@mixin type-body-large() {
+    --fontShorthand: var(--text-body-shorthand-large);
+    font-family: var(--fontStack-system);
+    color: var(--fgColor-default);
+}
 
 @mixin type-button() {
     // font-size: var(--font-size-base, 1rem) !important;
@@ -104,5 +114,5 @@
 
 @mixin focus() {
     outline-offset: 3px;
-    outline: 2px solid var(--color-accent-fg);
+    outline: 2px solid var(--focus-outlineColor);
 }
