@@ -4,19 +4,20 @@ import { defineConfig } from "vite";
 
 // https://vite.dev/config/
 export default defineConfig({
-	plugins: [react()],
-	base: "/checklist",
-	resolve: {
-		alias: {
-			"@components": path.resolve(__dirname, "./src/components"),
-		},
-	},
-	server: {
-		cors: {
-			// the origin you will be accessing via browser
-			origin: "https://david-way.github.io/",
-		},
-	},
+  plugins: [react()],
+  base: "/checklist",
+  resolve: {
+    alias: {
+      "@components": path.resolve(__dirname, "./src/components"),
+      "@api": path.resolve(__dirname, "./src/api"),
+    },
+  },
+  server: {
+    cors: {
+      // the origin you will be accessing via browser
+      origin: "https://david-way.github.io/",
+    },
+  },
 });
 
 // https://github.com/David-Way/checklist/blob/main/src/data//checklist/1000000.json

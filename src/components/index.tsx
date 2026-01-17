@@ -5,3 +5,4 @@ export type { HeaderProps } from "./Header";
 export { default as Header } from "./Header";
 export { default as List } from "./List";
 export { default as ListItem } from "./List/ListItem";
+export { default as Tag } from "./Tag";

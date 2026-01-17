@@ -1,32 +1,76 @@
 {
   "version": "1.0.0",
   "id": "1000000",
-  "title": "Example Checklist 1",
-  "description": "A placeholder example checklist for development testing",
+  "title": "100 Pushups",
+  "description": "Hundred Pushups is a training program to train the body to go from just one pushup to 100 consecutive reps in less than two months.",
   "meta": {
     "author": "David Way",
-    "lastUpdated": "06/01/2026",
-    "tags": ["test", "example", "placeholder"]
+    "lastUpdated": "17/01/2026",
+    "tags": ["workout"]
   },
-  "sections": [
+  "properties": [
     {
-      "id": "uuid-001_section-001",
-      "title": "Section 1",
-      "description": "Section description with a [link](www.davidway.ie)",
-      "items": [
+      "type": "boolean",
+      "label": "Set 1",
+      "description": "",
+      "helpText": "Example help text",
+      "required": true,
+      "options": [
         {
-          "id": "uuid-001_section-001_item-001",
-          "type": "boolean",
-          "label": "Item 1",
-          "description": "Item description with a [link](www.davidway.ie)",
-          "helpText": "Example help text",
-          "required": true,
-          "options": [
-            {
-              "value": "1",
-              "label": "Enum Option 1"
-            }
-          ]
+          "value": "1 reps",
+          "label": "Enum Option 1"
+        }
+      ]
+    },
+    {
+      "type": "boolean",
+      "label": "Set 2",
+      "description": "",
+      "helpText": "Example help text",
+      "required": true,
+      "options": [
+        {
+          "value": "1 reps",
+          "label": "Enum Option 1"
+        }
+      ]
+    },
+    {
+      "type": "boolean",
+      "label": "Set 3",
+      "description": "",
+      "helpText": "Example help text",
+      "required": true,
+      "options": [
+        {
+          "value": "1",
+          "label": "Enum Option 1"
+        }
+      ]
+    },
+    {
+      "type": "boolean",
+      "label": "Set 4",
+      "description": "",
+      "helpText": "Example help text",
+      "required": true,
+      "options": [
+        {
+          "value": "1",
+          "label": "Enum Option 1"
+        }
+      ]
+    },
+    {
+      "type": "boolean",
+      "label": "Set 5",
+      "description": "",
+      "helpText": "Example help text",
+      "required": true,
+      "options": [
+        {
+          "value": "1",
+          "label": "Enum Option 1"
         }
       ]
     }

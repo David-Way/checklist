@@ -1,26 +1,30 @@
-import "./list-item.scss";
 import classNames from "classnames";
+import "./tag.scss";
 
 // Define the prop types using an interface
-export interface ListItemProps {
+export interface TagProps {
   as: string;
   className: string;
-  link: boolean;
+  type: string;
+  size: string;
+  children: React.ReactNode;
 }
 
-const ListItem: React.FC<ListItemProps> = ({
-  as: Element = "li",
-  link = false,
+const Tag: React.FC<TagProps> = ({
+  as: Element = "span",
   className,
+  type,
+  size = "md",
   children,
   ...otherProps
 }) => {
   return (
     <Element
       className={classNames([
-        "c-list__list-item",
+        "c-tag",
         {
-          "c-list__list-item--link": link,
+          [`c-tag--${type}`]: type,
+          [`c-tag--size-${size}`]: size,
         },
         className,
       ])}
@@ -31,4 +35,4 @@ const ListItem: React.FC<ListItemProps> = ({
   );
 };
 
-export default ListItem;
+export default Tag;
