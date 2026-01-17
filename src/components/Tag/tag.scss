@@ -1,0 +1,21 @@
+@use '../../app/styles/mixins';
+
+.c-tag {
+  @include mixins.type-body();
+  border: var(--border-default);
+  border-radius: var(--borderRadius-small);
+  user-select: none;
+
+  &--size-sm {
+    @include mixins.type-body-small();
+    padding: var(--base-size-2);
+  }
+
+  &--size-md {
+    padding: var(--base-size-4);
+  }
+
+  &--size-lg {
+    padding: var(--base-size-6);
+  }
+}
