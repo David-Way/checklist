@@ -4,6 +4,7 @@
   @include mixins.type-body();
   border: var(--border-default);
   border-radius: var(--borderRadius-small);
+  text-box-trim: trim-both;
   user-select: none;
 
   &--size-sm {
