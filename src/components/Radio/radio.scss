@@ -13,6 +13,8 @@ $-radio-border-radius: var(--borderRadius-full);
   border: 1px solid var(--borderColor-muted);
   border-radius: calc(var(--borderRadius-small) + var(--base-size-6));
   padding: var(--base-size-6);
+  flex: 1;
+  max-width: fit-content;
 
   &__description {
     padding: var(--base-size-6);
