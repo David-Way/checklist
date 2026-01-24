@@ -31,7 +31,7 @@ checklistFiles.forEach(checklistFile => {
 
         // build an index file with key information for each file
         checklistIndexContent.push({
-            id: jsonFileContent?.id,
+            $id: jsonFileContent?.$id,
             version: jsonFileContent?.version,
             title: jsonFileContent?.title,
             description: jsonFileContent?.description,

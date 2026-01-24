@@ -1,5 +1,5 @@
 import { getChecklist } from "@api";
-import { FlexContainer, FormContainer, Header } from "@components";
+import { Container, FlexContainer, FormContainer, Header } from "@components";
 import { useQuery } from "@tanstack/react-query";
 import { Link, useParams } from "react-router-dom";
 
@@ -21,15 +21,17 @@ const ChecklistPage: React.FC = () => {
   }
 
   return (
-    <FlexContainer spacing="16" direction="column" align="stretch">
-      <Header title="Checklist" />
-      <aside>
-        <Link to="/">Back to all Checklists</Link>
-      </aside>
-      <main>
-        <FormContainer schema={data.schema} uiSchema={data.uiSchema} />
-      </main>
-    </FlexContainer>
+    <Container maxWidth="large" className="u-mh:auto">
+      <FlexContainer spacing="16" direction="column" align="stretch">
+        <Header title="Checklist" />
+        <aside>
+          <Link to="/">Back to all Checklists</Link>
+        </aside>
+        <main>
+          <FormContainer schema={data.schema} uiSchema={data.uiSchema} />
+        </main>
+      </FlexContainer>
+    </Container>
   );
 };
 

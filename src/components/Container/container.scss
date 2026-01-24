@@ -1,0 +1,29 @@
+.l-container {
+  &--small {
+    max-width: auto;
+  }
+
+  &--xsmall {
+    max-width: var(--breakpoint-xsmall);
+  }
+
+  &--small {
+    max-width: var(--breakpoint-small);
+  }
+
+  &--medium {
+    max-width: var(--breakpoint-medium);
+  }
+
+  &--large {
+    max-width: var(--breakpoint-large);
+  }
+
+  &--xlarge {
+    max-width: var(--breakpoint-xlarge);
+  }
+
+  &--xxlarge {
+    max-width: var(--breakpoint-xxlarge);
+  }
+}
