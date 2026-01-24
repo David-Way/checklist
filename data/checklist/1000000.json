@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "id": "1000000",
+  "$id": "1000000",
   "title": "100 Pushups",
   "description": "Hundred Pushups is a training program to train the body to go from just one pushup to 100 consecutive reps in less than two months.",
   "meta": {
@@ -8,71 +8,45 @@
     "lastUpdated": "17/01/2026",
     "tags": ["workout"]
   },
-  "properties": [
-    {
-      "type": "boolean",
-      "label": "Set 1",
-      "description": "",
-      "helpText": "Example help text",
-      "required": true,
-      "options": [
-        {
-          "value": "1 reps",
-          "label": "Enum Option 1"
-        }
-      ]
+  "properties": {
+    "Stage": {
+      "type": "string",
+      "enum": ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5"]
     },
-    {
-      "type": "boolean",
-      "label": "Set 2",
-      "description": "",
-      "helpText": "Example help text",
-      "required": true,
-      "options": [
+    "Week 1": {
+      "type": "array",
+      "items": [
         {
-          "value": "1 reps",
-          "label": "Enum Option 1"
-        }
-      ]
-    },
-    {
-      "type": "boolean",
-      "label": "Set 3",
-      "description": "",
-      "helpText": "Example help text",
-      "required": true,
-      "options": [
+          "type": "boolean",
+          "label": "14 reps",
+          "description": "Set 1",
+          "required": false
+        },
         {
-          "value": "1",
-          "label": "Enum Option 1"
-        }
-      ]
-    },
-    {
-      "type": "boolean",
-      "label": "Set 4",
-      "description": "",
-      "helpText": "Example help text",
-      "required": true,
-      "options": [
+          "type": "boolean",
+          "label": "18 reps",
+          "description": "Set 2",
+          "required": false
+        },
         {
-          "value": "1",
-          "label": "Enum Option 1"
-        }
-      ]
-    },
-    {
-      "type": "boolean",
-      "label": "Set 5",
-      "description": "",
-      "helpText": "Example help text",
-      "required": true,
-      "options": [
+          "type": "boolean",
+          "label": "15 reps",
+          "description": "Set 3",
+          "required": false
+        },
         {
-          "value": "1",
-          "label": "Enum Option 1"
+          "type": "boolean",
+          "label": "13 reps",
+          "description": "Set 4",
+          "required": false
+        },
+        {
+          "type": "boolean",
+          "label": "11+ reps",
+          "description": "Set 5",
+          "required": false
         }
       ]
     }
-  ]
+  }
 }
