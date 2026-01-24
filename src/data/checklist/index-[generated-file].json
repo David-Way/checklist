@@ -10,9 +10,7 @@
       "meta": {
         "author": "David Way",
         "lastUpdated": "17/01/2026",
-        "tags": [
-          "workout"
-        ]
+        "tags": ["workout"]
       }
     },
     {
@@ -23,11 +21,7 @@
       "meta": {
         "author": "David Way",
         "lastUpdated": "06/01/2026",
-        "tags": [
-          "test",
-          "example",
-          "placeholder"
-        ]
+        "tags": ["test", "example", "placeholder"]
       }
     }
   ]
