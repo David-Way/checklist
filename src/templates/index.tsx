@@ -18,7 +18,7 @@ import {
   titleId,
 } from "@rjsf/utils";
 import { type CSSProperties } from "react";
-import { SubmitButton } from "./CustomTemplates/SubmitButton";
+import { SubmitButton } from "./CustomTemplates";
 
 function CustomFieldTemplate(props: FieldTemplateProps) {
   const {
