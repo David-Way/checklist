@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "id": "2000000",
+  "$id": "2000000",
   "title": "Example Checklist 2",
   "description": "A placeholder example checklist for development testing",
   "meta": {

@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "id": "1000000",
+  "$id": "1000000",
   "title": "100 Pushups",
   "description": "A training program to train the body to go from just one pushup to 100 consecutive reps in less than two months.",
   "meta": {
@@ -11,7 +11,12 @@
   "properties": {
     "Stage": {
       "type": "string",
-      "enum": ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5"]
+      "enum": ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5"],
+      "default": "Week 1"
+    },
+    "Intensity": {
+      "type": "string",
+      "enum": ["Low", "Medium", "High"]
     },
     "Week 1": {
       "type": "array",
