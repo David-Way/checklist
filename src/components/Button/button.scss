@@ -1,0 +1,61 @@
+@use "../../app/styles/mixins";
+
+.c-button {
+  @include mixins.type-button();
+  @include mixins.unstyled-button();
+  border-radius: var(--borderRadius-medium);
+  box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset,
+    rgba(50, 50, 93, 0.1) 0 2px 5px 0, rgba(0, 0, 0, 0.07) 0 1px 1px 0;
+  background-color: var(--button-primary-bgColor-rest);
+  color: var(--button-primary-fgColor-rest);
+  display: inline-flex;
+  flex-shrink: 0;
+  justify-content: space-between;
+  line-height: 1.15;
+  max-width: mixins.rem(320px);
+  padding: var(--base-size-12);
+  min-height: 48px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.2s, box-shadow 0.08s ease-in;
+
+  &:hover {
+    box-shadow: rgb(64 68 82 / 8%) 0px 3px 9px 0px,
+      rgb(64 68 82 / 8%) 0px 2px 5px 0px;
+  }
+
+  &:focus {
+    box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset,
+      rgba(50, 50, 93, 0.2) 0 6px 15px 0, rgba(0, 0, 0, 0.1) 0 2px 2px 0,
+      rgba(50, 151, 211, 0.3) 0 0 0 4px;
+  }
+
+  &:disabled {
+    cursor: default;
+  }
+
+  &--secondary {
+    background-color: var(--button-secondary-bgColor-rest);
+    color: var(--button-secondary-fgColor-rest);
+  }
+
+  &--ghost {
+    background-color: transparent;
+    color: var(--cds-button-tertiary);
+    box-shadow: none;
+  }
+
+  &--small {
+    @include mixins.type-button-small();
+    border-radius: var(--borderRadius-small);
+    min-height: 36px;
+    padding: var(--base-size-08);
+  }
+
+  &--x-small {
+    @include mixins.type-button-small();
+    border-radius: var(--borderRadius-small);
+    min-height: 24px;
+    padding: var(--base-size-02);
+  }
+}

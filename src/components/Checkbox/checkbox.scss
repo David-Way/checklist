@@ -1,10 +1,10 @@
 @use "../../app/styles/mixins";
 
 $-checkbox-width: 44px;
-$-checkbox-border-radius: 4px;
+$-checkbox-border-radius: var(--borderRadius-small);
 
 .c-checkbox {
-    border: 1px solid var(--color-border-subtle);
+    border: 1px solid var(--borderColor-muted);
     border-radius: $-checkbox-border-radius;
     padding: var(--base-size-8);
 
@@ -20,7 +20,7 @@ $-checkbox-border-radius: 4px;
         align-items: center;
         gap: var(--base-size-8);
         padding: var(--base-size-8);
-        background-color: var(--color-canvas-subtle);
+        background-color: var(--bgColor-muted); //? 
         border-radius: $-checkbox-border-radius;
         cursor: pointer;
         user-select: none;
@@ -31,10 +31,9 @@ $-checkbox-border-radius: 4px;
             /* Remove most all native input styles */
             appearance: none;
             /* For iOS < 15 */
-            background-color: var(--color-canvas-default);
+            background-color: var(--bgColor-default); // ?
             /* Not removed via appearance */
             margin: 0;
-
             cursor: pointer;
             font: inherit;
             color: currentColor;
@@ -42,8 +41,6 @@ $-checkbox-border-radius: 4px;
             height: $-checkbox-width;
             border: 2px solid currentColor;
             border-radius: $-checkbox-border-radius;
-            transform: translateY(-0.075em);
-
             display: grid;
             place-content: center;
             align-self: flex-start;

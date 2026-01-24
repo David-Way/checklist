@@ -3,9 +3,8 @@ import { useId } from "react";
 import "./checkbox.scss";
 
 const Checkbox = (props: WidgetProps) => {
-  console.log("CBOX", props);
   const {
-    schema: { label, description },
+    schema: { label, description, value, onChange },
   } = props;
 
   const uuid = useId();
@@ -14,13 +13,14 @@ const Checkbox = (props: WidgetProps) => {
     <div className="c-checkbox">
       <label
         className="c-checkbox__label"
-        {...(props.description ? { "aria-describedby": uuid } : {})}
+        {...(description ? { "aria-describedby": uuid } : {})}
       >
         <input
           type="checkbox"
-          {...(props.value ? { checked: "checked" } : {})}
+          {...(value ? { checked: "checked" } : {})}
           name={`checkbox-${uuid}`}
-          onClick={() => props.onChange(!props.value)}
+          // onClick={() => onChange(!value)}
+          onClick={onChange}
         />
         <span className="c-checkbox__label-text">{String(label)}</span>
       </label>

@@ -1,0 +1,7 @@
+{
+  "Stage": {
+    "ui:widget": "radio",
+    "ui:className": "c-radio--inline",
+    "ui:inline": true
+  }
+}

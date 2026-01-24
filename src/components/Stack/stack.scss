@@ -1,0 +1,22 @@
+@use "../../app/styles/variables";
+
+.l-stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  &:only-child {
+    /* ↓ `height` in horizontal-tb writing mode */
+    block-size: 100%;
+  }
+}
+
+.l-stack>* {
+  margin-block: 0;
+}
+
+@each $key, $value in variables.$spacing {
+  .l-stack--#{$key}>*+* {
+    margin-block-start: $value !important;
+  }
+}
