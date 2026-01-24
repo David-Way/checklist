@@ -1,34 +1,40 @@
 {
-  "version": "1.0.0",
   "$id": "2000000",
-  "title": "Example Checklist 2",
-  "description": "A placeholder example checklist for development testing",
+  "title": "A registration form",
+  "description": "A simple form example.",
   "meta": {
     "author": "David Way",
     "lastUpdated": "06/01/2026",
     "tags": ["test", "example", "placeholder"]
   },
-  "sections": [
-    {
-      "id": "uuid-001_section-001",
-      "title": "Section 1",
-      "description": "Section description with a [link](www.davidway.ie)",
-      "items": [
+  "type": "object",
+  "properties": {
+    "firstName": {
+      "type": "array",
+      "title": "First name",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": ["A", "B", "C", "D"]
+      }
+    }
+  },
+  "dependencies": {
+    "firstName": {
+      "oneOf": [
         {
-          "id": "uuid-001_section-001_item-001",
-          "type": "boolean",
-          "label": "Item 1",
-          "description": "Item description with a [link](www.davidway.ie)",
-          "helpText": "Example help text",
-          "required": true,
-          "options": [
-            {
-              "value": "1",
-              "label": "Enum Option 1"
+          "properties": {
+            "firstName": {
+              "contains": {
+                "const": "A"
+              }
+            },
+            "description": {
+              "type": "string"
             }
-          ]
+          }
         }
       ]
     }
-  ]
+  }
 }
