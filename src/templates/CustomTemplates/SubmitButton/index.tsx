@@ -1,0 +1,15 @@
+import { Button, FlexContainer } from "@components";
+import { getSubmitButtonOptions, type SubmitButtonProps } from "@rjsf/utils";
+
+export function SubmitButton(props: SubmitButtonProps) {
+  const { uiSchema } = props;
+  const { norender } = getSubmitButtonOptions(uiSchema);
+  if (norender) {
+    return null;
+  }
+  return (
+    <FlexContainer className="u-pt:24">
+      <Button type="submit">Submit</Button>
+    </FlexContainer>
+  );
+}
