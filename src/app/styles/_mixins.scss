@@ -49,37 +49,44 @@
 //--------------------
 @mixin type-h1() {
     --fontShorthand: var(--text-display-shorthand);
+    font: var(--fontShorthand);
     letter-spacing: -0.1rem;
 }
 
 @mixin type-h2() {
-    --fontShorthand: var(text-title-shorthand-large);
+    --fontShorthand: var(--text-title-shorthand-large);
+    font: var(--fontShorthand);
     letter-spacing: -0.05rem;
 }
 
 @mixin type-h3() {
-    --fontShorthand: var(text-title-shorthand-medium);
+    --fontShorthand: var(--text-title-shorthand-medium);
+    font: var(--fontShorthand);
     letter-spacing: -0.03rem;
 }
 
 @mixin type-h4() {
     --fontShorthand: var(text-title-shorthand-small);
+    font: var(--fontShorthand);
 }
 
 @mixin type-body() {
     --fontShorthand: var(--text-body-shorthand-large);
+    font: var(--fontShorthand);
     font-family: var(--fontStack-system);
     color: var(--fgColor-default);
 }
 
 @mixin type-body-small() {
     --fontShorthand: var(--text-body-shorthand-medium);
+    font: var(--fontShorthand);
     font-family: var(--fontStack-system);
     color: var(--fgColor-default);
 }
 
 @mixin type-body-large() {
     --fontShorthand: var(--text-body-shorthand-large);
+    font: var(--fontShorthand);
     font-family: var(--fontStack-system);
     color: var(--fgColor-default);
 }

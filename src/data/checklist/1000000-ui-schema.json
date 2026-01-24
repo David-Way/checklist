@@ -1,7 +1,13 @@
 {
   "Stage": {
     "ui:widget": "radio",
-    "ui:className": "c-radio--inline",
+    "ui:inline": true,
+    "ui:options": {
+      "inline": true
+    }
+  },
+  "Day": {
+    "ui:widget": "radio",
     "ui:inline": true,
     "ui:options": {
       "inline": true
@@ -9,7 +15,6 @@
   },
   "Intensity": {
     "ui:widget": "radio",
-    "ui:className": "c-radio--inline",
     "ui:options": {
       "inline": true
     }

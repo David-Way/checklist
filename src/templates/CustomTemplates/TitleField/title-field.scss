@@ -1,0 +1,5 @@
+@use '../../../app//styles/mixins';
+
+.t-title-field {
+  @include mixins.type-body-large();
+}

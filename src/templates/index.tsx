@@ -4,6 +4,7 @@ import {
   FieldTemplate,
   ObjectFieldTemplate,
   SubmitButton,
+  TitleField,
 } from "./CustomTemplates";
 
 export default {
@@ -12,4 +13,5 @@ export default {
   ArrayFieldTemplate: ArrayFieldTemplate,
   ArrayFieldItemTemplate: ArrayFieldItemTemplate,
   ObjectFieldTemplate: ObjectFieldTemplate,
+  TitleFieldTemplate: TitleField,
 };
