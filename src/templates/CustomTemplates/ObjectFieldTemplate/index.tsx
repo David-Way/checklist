@@ -12,6 +12,8 @@ import {
   type StrictRJSFSchema,
   titleId,
 } from "@rjsf/utils";
+import "./object-field.scss";
+import classNames from "classnames";
 
 /** The `ObjectFieldTemplate` is the template to use to render all the inner properties of an object along with the
  * title and description if available. If the object is expandable, then an `AddButton` is also rendered after all
@@ -73,7 +75,7 @@ export default function ObjectFieldTemplate<
     <Stack
       as="fieldset"
       spacing="24"
-      className={className}
+      className={classNames(["t-object-field", className])}
       id={fieldPathId.$id}
     >
       {title && (

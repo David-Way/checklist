@@ -1,4 +1,7 @@
+@use '../../app/styles/mixins';
+
 .c-label {
+  @include mixins.type-body-large();
   align-self: flex-start;
   color: var(--fgColor-default, var(--color-fg-default));
   cursor: pointer;

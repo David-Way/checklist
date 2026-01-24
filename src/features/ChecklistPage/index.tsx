@@ -25,7 +25,7 @@ const ChecklistPage: React.FC = () => {
       <FlexContainer spacing="16" direction="column" align="stretch">
         <Header title="Checklist" />
         <aside>
-          <Link to="/">Back to all Checklists</Link>
+          <Link to="/">‹ Back to all Checklists</Link>
         </aside>
         <main>
           <FormContainer schema={data.schema} uiSchema={data.uiSchema} />

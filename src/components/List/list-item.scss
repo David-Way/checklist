@@ -42,7 +42,7 @@
       padding-block: var(--base-size-12);
       padding-left: var(--base-size-12);
       padding-right: var(--base-size-32);
-      color: var(--fgColor-default);
+      color: var(--fgColor-muted);
       text-decoration: none;
 
       :visited,
@@ -62,6 +62,7 @@
         text-underline-position: from-font;
         text-underline-offset: 0;
         text-decoration-thickness: 1px;
+        text-decoration-color: var(--fgColor-link);
 
         &:hover {
           text-decoration: underline;

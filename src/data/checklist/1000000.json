@@ -2,7 +2,7 @@
   "version": "1.0.0",
   "$id": "1000000",
   "title": "100 Pushups",
-  "description": "A training program to train the body to go from just one pushup to 100 consecutive reps in less than two months.",
+  "description": "A training program to go from just one pushup to 100 consecutive reps in less than two months.",
   "meta": {
     "author": "David Way",
     "lastUpdated": "17/01/2026",
@@ -14,41 +14,47 @@
       "enum": ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5"],
       "default": "Week 1"
     },
+    "Day": {
+      "type": "string",
+      "enum": ["Day 1", "Day 3", "Day 5"],
+      "default": "Day 1"
+    },
     "Intensity": {
       "type": "string",
-      "enum": ["Low", "Medium", "High"]
+      "enum": ["Low", "Medium", "High"],
+      "default": "Low"
     },
     "Week 1": {
       "type": "array",
       "items": [
         {
           "type": "boolean",
-          "label": "14 reps",
-          "description": "Set 1",
+          "label": "Set 1",
+          "description": "14 reps",
           "required": false
         },
         {
           "type": "boolean",
-          "label": "18 reps",
-          "description": "Set 2",
+          "label": "Set 2",
+          "description": "18 reps",
           "required": false
         },
         {
           "type": "boolean",
-          "label": "15 reps",
-          "description": "Set 3",
+          "label": "Set 3",
+          "description": "15 reps",
           "required": false
         },
         {
           "type": "boolean",
-          "label": "13 reps",
-          "description": "Set 4",
+          "label": "Set 4",
+          "description": "13 reps",
           "required": false
         },
         {
           "type": "boolean",
-          "label": "11+ reps",
-          "description": "Set 5",
+          "label": "Set 5",
+          "description": "11+ reps",
           "required": false
         }
       ]

@@ -5,11 +5,11 @@ $-checkbox-border-radius: var(--borderRadius-small);
 
 .c-checkbox {
     border: 1px solid var(--borderColor-muted);
-    border-radius: $-checkbox-border-radius;
-    padding: var(--base-size-8);
+    border-radius: calc($-checkbox-border-radius + var(--base-size-6));
+    padding: var(--base-size-6);
 
     &__description {
-        padding: var(--base-size-8);
+        padding: var(--base-size-6);
         margin: 0;
     }
 
