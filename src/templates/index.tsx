@@ -1,6 +1,7 @@
 import {
   ArrayFieldItemTemplate,
   ArrayFieldTemplate,
+  DescriptionField,
   FieldTemplate,
   ObjectFieldTemplate,
   SubmitButton,
@@ -14,4 +15,5 @@ export default {
   ArrayFieldItemTemplate: ArrayFieldItemTemplate,
   ObjectFieldTemplate: ObjectFieldTemplate,
   TitleFieldTemplate: TitleField,
+  DescriptionFieldTemplate: DescriptionField,
 };

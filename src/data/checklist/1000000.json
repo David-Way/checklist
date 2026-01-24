@@ -24,7 +24,7 @@
       "enum": ["Low", "Medium", "High"],
       "default": "Low"
     },
-    "Week 1": {
+    "Week1_Day2_Low": {
       "type": "array",
       "items": [
         {

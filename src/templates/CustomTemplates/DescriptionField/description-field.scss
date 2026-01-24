@@ -1,0 +1,9 @@
+.t-description-field {
+  padding: var(--base-size-8);
+  background-color: var(--bgColor-muted);
+  border-radius: var(--borderRadius-small);
+}
+
+legend+.t-description-field {
+  margin-block-start: 0 !important;
+}
