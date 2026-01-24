@@ -1,0 +1,8 @@
+.c-label {
+  align-self: flex-start;
+  color: var(--fgColor-default, var(--color-fg-default));
+  cursor: pointer;
+  display: block;
+  font-size: var(--text-body-size-medium, .875rem);
+  font-weight: var(--base-text-weight-semibold, 600);
+}
