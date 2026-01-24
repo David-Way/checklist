@@ -38,17 +38,18 @@
 
     a {
       display: block;
+      border-radius: var(--borderRadius-small);
       padding-block: var(--base-size-12);
       padding-left: var(--base-size-12);
       padding-right: var(--base-size-32);
       color: var(--fgColor-default);
       text-decoration: none;
-      border-radius: var(--borderRadius-small);
 
       :visited,
       :focus-visible,
       :hover,
       :active {
+        text-decoration: none;
         color: var(--fgColor-default);
       }
 
@@ -61,6 +62,10 @@
         text-underline-position: from-font;
         text-underline-offset: 0;
         text-decoration-thickness: 1px;
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
   }
