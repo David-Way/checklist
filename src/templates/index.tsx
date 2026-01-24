@@ -18,47 +18,7 @@ import {
   titleId,
 } from "@rjsf/utils";
 import { type CSSProperties } from "react";
-
-function SubmitButton(props: SubmitButtonProps) {
-  const { uiSchema } = props;
-  const { norender } = getSubmitButtonOptions(uiSchema);
-  if (norender) {
-    return null;
-  }
-  return (
-    <FlexContainer className="u-pt:24">
-      <Button type="submit">Submit</Button>
-    </FlexContainer>
-  );
-}
-
-// function CustomFieldTemplate(props: FieldTemplateProps) {
-//   const {
-//     id,
-//     classNames,
-//     style,
-//     label,
-//     help,
-//     required,
-//     description,
-//     errors,
-//     children,
-//   } = props;
-//   return (
-//     <Field
-//       id={id}
-//       label={label}
-//       required={required}
-//       className={classNames}
-//       style={style}
-//     >
-//       {description}
-//       {children}
-//       {errors}
-//       {help}
-//     </Field>
-//   );
-// }
+import { SubmitButton } from "./CustomTemplates";
 
 function CustomFieldTemplate(props: FieldTemplateProps) {
   const {

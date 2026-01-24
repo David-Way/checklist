@@ -7,7 +7,9 @@ const ChecklistPage: React.FC = () => {
   const { id } = useParams();
   const { isPending, isError, data, error } = useQuery({
     queryKey: ["getChecklist"],
-    queryFn: () => getChecklist(id),
+    queryFn: () => {
+      if (id) return getChecklist(id);
+    },
   });
 
   if (isPending) {
