@@ -50,6 +50,7 @@ const FormContainer: React.FC<FormProps> = ({ schema, uiSchema }) => {
     <Form
       schema={schema || schemaFallback}
       uiSchema={uiSchema}
+      className="c-form-container"
       validator={validator}
       templates={templates}
       onChange={(event) => setFormData(event.formData)}

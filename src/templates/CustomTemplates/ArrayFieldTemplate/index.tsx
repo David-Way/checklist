@@ -1,4 +1,5 @@
 import { Stack } from "@components";
+import "./ArrayField.scss";
 import {
   type ArrayFieldTemplateProps,
   buttonId,
@@ -8,6 +9,7 @@ import {
   type RJSFSchema,
   type StrictRJSFSchema,
 } from "@rjsf/utils";
+import classNames from "classnames";
 
 /** The `ArrayFieldTemplate` component is the template used to render all items in an array.
  *
@@ -52,7 +54,12 @@ export default function ArrayFieldTemplate<
     ButtonTemplates: { AddButton },
   } = registry.templates;
   return (
-    <Stack spacing="4" as="fieldset" className={className} id={fieldPathId.$id}>
+    <Stack
+      spacing="4"
+      as="fieldset"
+      className={classNames(["t-array-field", className])}
+      id={fieldPathId.$id}
+    >
       <ArrayFieldTitleTemplate
         fieldPathId={fieldPathId}
         title={uiOptions.title || title}
