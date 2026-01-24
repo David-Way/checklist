@@ -5,6 +5,7 @@ body {
     font-family: var(--fontStack-system);
     color: var(--fgColor-default);
     background-color: var(--bgColor-default);
+    text-rendering: optimizeLegibility;
 }
 
 h1,
