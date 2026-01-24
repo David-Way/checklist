@@ -13,6 +13,7 @@
 ---
 
 ## Discovery
+- [ ] conditional field behaviour example https://jsfiddle.net/cowbellerina/zbfh96b1/
 - [ ] The current checklist definition schema is the schema for a yaml file. I want to use that yaml file to generate a simpler "schema" needed by RJSF.
 - [ ] Form should use Live omit (onblur) to remove data for conditional fields
 - Example of conditional display of fields
