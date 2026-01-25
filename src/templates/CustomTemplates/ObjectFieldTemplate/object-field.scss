@@ -6,3 +6,7 @@
   padding-inline: var(--base-size-16);
   padding-block-end: var(--base-size-16);
 }
+
+.t-object-field>legend+* {
+  margin-block-start: 0 !important;
+}

@@ -11,8 +11,9 @@
   "properties": {
     "Stage": {
       "type": "string",
-      "enum": ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5"],
-      "default": "Week 1"
+      "description": "description123",
+      "label": "label123",
+      "enum": ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5"]
     },
     "Day": {
       "type": "string",
@@ -23,41 +24,61 @@
       "type": "string",
       "enum": ["Low", "Medium", "High"],
       "default": "Low"
-    },
-    "Week1_Day2_Low": {
-      "type": "array",
-      "items": [
-        {
-          "type": "boolean",
-          "label": "Set 1",
-          "description": "14 reps",
-          "required": false
-        },
-        {
-          "type": "boolean",
-          "label": "Set 2",
-          "description": "18 reps",
-          "required": false
-        },
-        {
-          "type": "boolean",
-          "label": "Set 3",
-          "description": "15 reps",
-          "required": false
-        },
-        {
-          "type": "boolean",
-          "label": "Set 4",
-          "description": "13 reps",
-          "required": false
-        },
-        {
-          "type": "boolean",
-          "label": "Set 5",
-          "description": "11+ reps",
-          "required": false
-        }
-      ]
     }
-  }
+  },
+  "required": ["Stage", "Day", "Intensity"],
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "Stage": {
+            "const": "Week 1"
+          },
+          "Day": {
+            "const": "Day 1"
+          },
+          "Intensity": {
+            "const": "Low"
+          }
+        },
+        "required": ["Stage", "Day", "Intensity"]
+      },
+      "then": {
+        "properties": {
+          "followUpQuestion": {
+            "type": "object",
+            "title": "Target Sets",
+            "properties": {
+              "set1": {
+                "type": "boolean",
+                "label": "Set 1",
+                "description": "14 reps"
+              },
+              "set2": {
+                "type": "boolean",
+                "label": "Set 2",
+                "description": "18 reps"
+              },
+              "set3": {
+                "type": "boolean",
+                "label": "Set 3",
+                "description": "15 reps"
+              },
+              "set4": {
+                "type": "boolean",
+                "label": "Set 4",
+                "description": "13 reps"
+              },
+              "set5": {
+                "type": "boolean",
+                "label": "Set 5",
+                "description": "11+ reps"
+              }
+            }
+          }
+        },
+        "required": ["followUpQuestion"]
+      }
+    }
+  ]
 }
