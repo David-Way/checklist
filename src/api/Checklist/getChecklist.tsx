@@ -16,7 +16,6 @@ export default async function getChecklist(id: number): ChecklistRequest {
     fetch(`${import.meta.env.VITE_APP_API_URL}/checklist/${id}-ui-schema.json`),
   ]);
 
-  console.log("uiSchema", uiSchema);
   return {
     schema: await schema.json(),
     uiSchema: (await uiSchema?.json()) || {},

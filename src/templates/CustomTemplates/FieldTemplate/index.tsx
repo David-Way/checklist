@@ -14,7 +14,6 @@ export default function FieldTemplate(props: FieldTemplateProps) {
     children,
   } = props;
 
-  console.log(">> field", props);
   return (
     <Stack spacing="16" className={classNames} style={style}>
       <Label htmlFor={id} required={required}>
