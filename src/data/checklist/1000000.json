@@ -11,9 +11,8 @@
   "properties": {
     "Stage": {
       "type": "string",
-      "description": "description123",
-      "label": "label123",
-      "enum": ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5"]
+      "enum": ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5", "Week 6"],
+      "default": "Week 1"
     },
     "Day": {
       "type": "string",
@@ -22,8 +21,8 @@
     },
     "Intensity": {
       "type": "string",
-      "enum": ["Low", "Medium", "High"],
-      "default": "Low"
+      "enum": ["Beginner", "Intermediate", "Experienced"],
+      "default": "Beginner"
     }
   },
   "required": ["Stage", "Day", "Intensity"],
@@ -38,7 +37,7 @@
             "const": "Day 1"
           },
           "Intensity": {
-            "const": "Low"
+            "const": "Beginner"
           }
         },
         "required": ["Stage", "Day", "Intensity"]
@@ -48,31 +47,77 @@
           "followUpQuestion": {
             "type": "object",
             "title": "Target Sets",
+            "description": "Rest 60 seconds between sets",
             "properties": {
               "set1": {
                 "type": "boolean",
-                "label": "Set 1",
-                "description": "14 reps"
+                "label": "Set 1 - 2 reps"
               },
               "set2": {
                 "type": "boolean",
-                "label": "Set 2",
-                "description": "18 reps"
+                "label": "Set 2 - 3 reps"
               },
               "set3": {
                 "type": "boolean",
-                "label": "Set 3",
-                "description": "15 reps"
+                "label": "Set 3 - 2 reps"
               },
               "set4": {
                 "type": "boolean",
-                "label": "Set 4",
-                "description": "13 reps"
+                "label": "Set 4 - 2 reps"
               },
               "set5": {
                 "type": "boolean",
-                "label": "Set 5",
-                "description": "11+ reps"
+                "label": "Set 5 - 3+ reps",
+                "description": "Aim for 3, but do more if you can."
+              }
+            }
+          }
+        },
+        "required": ["followUpQuestion"]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "Stage": {
+            "const": "Week 2"
+          },
+          "Day": {
+            "const": "Day 1"
+          },
+          "Intensity": {
+            "const": "Beginner"
+          }
+        },
+        "required": ["Stage", "Day", "Intensity"]
+      },
+      "then": {
+        "properties": {
+          "followUpQuestion": {
+            "type": "object",
+            "title": "Target Sets",
+            "description": "Rest 60 seconds between sets",
+            "properties": {
+              "set1": {
+                "type": "boolean",
+                "label": "Set 1 - 4 reps"
+              },
+              "set2": {
+                "type": "boolean",
+                "label": "Set 2 - 6 reps"
+              },
+              "set3": {
+                "type": "boolean",
+                "label": "Set 3 - 4 reps"
+              },
+              "set4": {
+                "type": "boolean",
+                "label": "Set 4 - 4 reps"
+              },
+              "set5": {
+                "type": "boolean",
+                "label": "Set 5 - 6+ reps",
+                "description": "Aim for 3, but do more if you can."
               }
             }
           }
