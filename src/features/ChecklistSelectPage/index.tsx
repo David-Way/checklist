@@ -22,11 +22,25 @@ const ChecklistSelectPage: React.FC = () => {
   });
 
   if (isPending) {
-    return <span>Loading all checklists...</span>;
+    return (
+      <Container maxWidth="large" className="u-mh:auto">
+        <FlexContainer spacing="16" direction="column" align="stretch">
+          <Header title="Checklist" />
+
+          <main>
+            <p>Loading all checklists...</p>
+          </main>
+        </FlexContainer>
+      </Container>
+    );
   }
 
   if (isError) {
-    return <span>Error: {error.message}</span>;
+    return (
+      <Container maxWidth="large" className="u-mh:auto">
+        Error: {error.message}
+      </Container>
+    );
   }
 
   console.log("all checklists", allChecklists);
