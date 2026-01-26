@@ -11,5 +11,6 @@ export { default as Label } from "./Label";
 export { default as List } from "./List";
 export { default as ListItem } from "./List/ListItem";
 export { default as Radio } from "./Radio";
+export { default as Select } from "./Select";
 export { default as Stack } from "./Stack";
 export { default as Tag } from "./Tag";

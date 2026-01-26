@@ -2,4 +2,12 @@
 
 .t-title-field {
   @include mixins.type-body-large();
+  font-weight: 500;
+  padding-inline: var(--base-size-8);
+  display: flex;
+  gap: var(--base-size-4);
+
+  &__required-indicator {
+    color: var(--fgColor-muted);
+  }
 }

@@ -43,7 +43,6 @@ const ChecklistSelectPage: React.FC = () => {
     );
   }
 
-  console.log("all checklists", allChecklists);
   return (
     <Container maxWidth="large" className="u-mh:auto">
       <FlexContainer direction="column" spacing="16" align="stretch">

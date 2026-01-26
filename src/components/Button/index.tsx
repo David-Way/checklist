@@ -42,6 +42,7 @@ const Header: React.FC<ButtonProps> = ({
       className={buttonStyles}
       spacing="08"
       align="center"
+      justify="center"
       {...otherProps}
     >
       {children}
