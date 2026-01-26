@@ -1,0 +1,191 @@
+{
+  "$id": "3000000",
+  "title": "WHO Surgical Safety Checklist",
+  "description": "The World Health Organisation (WHO) first published their Surgical Safety Checklist in 2010. It's a series of five critical steps that surgical teams should perform before and after surgical procedures to reduce the risk of certain adverse events.",
+  "meta": {
+    "author": "David Way",
+    "lastUpdated": "26/01/2026",
+    "tags": ["medical", "safety"]
+  },
+  "type": "object",
+  "properties": {
+    "beforeInduction": {
+      "title": "Before Induction of Anaesthesia",
+      "type": "object",
+      "description": "Complete this section with at least the nurse and anaesthetist.",
+      "required": [
+        "identityConfirmed",
+        "siteMarked",
+        "anaesthesiaCheckComplete",
+        "pulseOximeterFunctioning",
+        "knownAllergy",
+        "difficultAirwayRisk",
+        "bloodLossRisk"
+      ],
+      "properties": {
+        "identityConfirmed": {
+          "type": "object",
+          "title": "Has the patient confirmed his/her identity, site, procedure, and consent?",
+          "properties": {
+            "identityConfirmedYes": {
+              "type": "boolean",
+              "label": "Yes"
+            }
+          }
+        },
+        "siteMarked": {
+          "type": "object",
+          "title": "Is the site marked?",
+          "properties": {
+            "siteMarkedYes": {
+              "type": "boolean",
+              "label": "Yes"
+            },
+            "siteMarkedNA": {
+              "type": "boolean",
+              "label": "Not applicable"
+            }
+          }
+        },
+        "anaesthesiaCheckComplete": {
+          "type": "boolean",
+          "label": "Anaesthesia machine and medication check complete"
+        },
+        "pulseOximeterFunctioning": {
+          "type": "boolean",
+          "label": "Pulse oximeter on patient and functioning"
+        },
+        "knownAllergy": {
+          "type": "boolean",
+          "label": "Known allergy"
+        },
+        "difficultAirwayRisk": {
+          "type": "boolean",
+          "label": "Difficult airway or aspiration risk (equipment/assistance available)"
+        },
+        "bloodLossRisk": {
+          "type": "boolean",
+          "label": "Risk of >500ml blood loss (7ml/kg in children) with appropriate access and fluids planned"
+        }
+      }
+    }
+  },
+  "dependencies": {
+    "beforeInduction": {
+      "oneOf": [
+        {
+          "properties": {
+            "beforeInduction": {
+              "required": [
+                "identityConfirmed",
+                "siteMarked",
+                "anaesthesiaCheckComplete",
+                "pulseOximeterFunctioning",
+                "knownAllergy",
+                "difficultAirwayRisk",
+                "bloodLossRisk"
+              ]
+            },
+            "beforeIncision": {
+              "title": "Before Skin Incision",
+              "type": "object",
+              "required": [
+                "teamIntroductions",
+                "antibioticGiven",
+                "sterilityConfirmed",
+                "essentialImagingDisplayed"
+              ],
+              "properties": {
+                "teamIntroductions": {
+                  "type": "boolean",
+                  "label": "All team members have introduced themselves by name and role"
+                },
+                "antibioticGiven": {
+                  "type": "boolean",
+                  "label": "Antibiotic prophylaxis given within the last 60 minutes"
+                },
+                "antibioticNotApplicable": {
+                  "type": "boolean",
+                  "label": "Antibiotic prophylaxis not applicable"
+                },
+                "surgeonCriticalSteps": {
+                  "type": "boolean",
+                  "label": "Surgeon: Critical or non-routine steps discussed"
+                },
+                "caseDurationDiscussed": {
+                  "type": "boolean",
+                  "label": "Surgeon: Case duration discussed"
+                },
+                "anticipatedBloodLossDiscussed": {
+                  "type": "boolean",
+                  "label": "Surgeon: Anticipated blood loss discussed"
+                },
+                "anaesthetistConcernsDiscussed": {
+                  "type": "boolean",
+                  "label": "Anaesthetist: Patient-specific concerns discussed"
+                },
+                "sterilityConfirmed": {
+                  "type": "boolean",
+                  "label": "Nursing team: Sterility confirmed (including indicator results)"
+                },
+                "equipmentIssuesDiscussed": {
+                  "type": "boolean",
+                  "label": "Nursing team: Equipment issues or concerns discussed"
+                },
+                "essentialImagingDisplayed": {
+                  "type": "boolean",
+                  "label": "Essential imaging displayed"
+                },
+                "imagingNotApplicable": {
+                  "type": "boolean",
+                  "label": "Essential imaging not applicable"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "beforeIncision": {
+      "oneOf": [
+        {
+          "properties": {
+            "beforeLeavingOR": {
+              "title": "Before Patient Leaves Operating Room",
+              "type": "object",
+              "required": [
+                "procedureNameConfirmed",
+                "countsCompleted",
+                "specimenLabellingConfirmed",
+                "equipmentProblemsAddressed",
+                "recoveryConcernsDiscussed"
+              ],
+              "properties": {
+                "procedureNameConfirmed": {
+                  "type": "boolean",
+                  "label": "Procedure name confirmed"
+                },
+                "countsCompleted": {
+                  "type": "boolean",
+                  "label": "Instrument, sponge and needle counts completed"
+                },
+                "specimenLabellingConfirmed": {
+                  "type": "boolean",
+                  "label": "Specimen labelling confirmed (read aloud with patient name)"
+                },
+                "equipmentProblemsAddressed": {
+                  "type": "boolean",
+                  "label": "Equipment problems identified and addressed"
+                },
+                "recoveryConcernsDiscussed": {
+                  "type": "boolean",
+                  "label": "Key concerns for recovery and postoperative management discussed"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
