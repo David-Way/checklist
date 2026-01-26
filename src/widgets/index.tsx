@@ -1,4 +1,4 @@
-import { Checkbox, Radio } from "@components";
+import { Checkbox, Radio, Select } from "@components";
 import type { RegistryWidgetsType, WidgetProps } from "@rjsf/utils";
 
 const CustomCheckbox = (props: WidgetProps) => {
@@ -9,9 +9,14 @@ const CustomRadioWidget = (props: WidgetProps) => {
   return <Radio {...props} />;
 };
 
+const CustomSelectWidget = (props: WidgetProps) => {
+  return <Select {...props} />;
+};
+
 const customWidgets: RegistryWidgetsType = {
   CheckboxWidget: CustomCheckbox,
   RadioWidget: CustomRadioWidget,
+  SelectWidget: CustomSelectWidget,
 };
 
 export default customWidgets;

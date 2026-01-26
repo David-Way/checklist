@@ -20,8 +20,12 @@ export default function TitleField<
   const { id, title, required, optionalDataControl } = props;
   return (
     <legend className="t-title-field" id={id}>
-      {title}
-      {required && <span className="required">{REQUIRED_FIELD_SYMBOL}</span>}
+      <span className="t-title-field__title">{title}</span>
+      {required && (
+        <span className="t-title-field__required-indicator">
+          {REQUIRED_FIELD_SYMBOL}
+        </span>
+      )}
       {optionalDataControl && (
         <span className="pull-right" style={{ marginBottom: "2px" }}>
           {optionalDataControl}

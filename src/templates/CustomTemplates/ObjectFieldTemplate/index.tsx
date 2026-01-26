@@ -74,7 +74,7 @@ export default function ObjectFieldTemplate<
   return (
     <Stack
       as="fieldset"
-      spacing="24"
+      spacing="20"
       className={classNames(["t-object-field", className])}
       id={fieldPathId.$id}
     >

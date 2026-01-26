@@ -15,6 +15,7 @@
   max-width: mixins.rem(320px);
   padding: var(--base-size-12);
   min-height: 48px;
+  min-width: 8rem;
   overflow: hidden;
   position: relative;
   transition: all 0.2s, box-shadow 0.08s ease-in;
