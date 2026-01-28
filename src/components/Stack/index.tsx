@@ -3,6 +3,7 @@ import { Children, cloneElement } from "react";
 import "./stack.scss";
 
 export type StackSpacing =
+  | "form"
   | "02"
   | "04"
   | "08"

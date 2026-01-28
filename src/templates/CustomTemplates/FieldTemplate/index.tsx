@@ -15,7 +15,7 @@ export default function FieldTemplate(props: FieldTemplateProps) {
   } = props;
 
   return (
-    <Stack spacing="16" className={classNames} style={style}>
+    <Stack spacing="form" className={classNames} style={style}>
       <Label htmlFor={id} required={required}>
         {label}
       </Label>

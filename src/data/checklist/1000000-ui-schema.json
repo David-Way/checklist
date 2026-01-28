@@ -1,14 +1,12 @@
 {
   "Stage": {
     "ui:widget": "radio",
-    "ui:inline": true,
     "ui:options": {
       "inline": true
     }
   },
   "Day": {
     "ui:widget": "radio",
-    "ui:inline": true,
     "ui:options": {
       "inline": true
     }

@@ -4,9 +4,24 @@ $-radio-width: 44px;
 $-radio-border-radius: var(--borderRadius-full);
 
 .c-radio-group {
-  border: none;
-  padding: 0;
   margin: 0;
+  border: 1px solid var(--borderColor-translucent);
+  border-radius: calc(var(--borderRadius-small) + var(--base-size-20));
+  padding-block-start: var(--base-size-8);
+  padding-inline: var(--base-size-16);
+  padding-block-end: var(--base-size-20);
+
+  &--inline {
+    .c-radio {
+      max-width: fit-content;
+    }
+  }
+}
+
+@media (min-width: 48rem) {
+  .c-radio-group {
+    padding-inline: var(--base-size-20);
+  }
 }
 
 .c-radio {
@@ -14,7 +29,6 @@ $-radio-border-radius: var(--borderRadius-full);
   border-radius: calc(var(--borderRadius-small) + var(--base-size-6));
   padding: var(--base-size-6);
   flex: 1;
-  max-width: fit-content;
 
   &__description {
     padding: var(--base-size-6);
