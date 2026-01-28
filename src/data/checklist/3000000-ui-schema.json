@@ -1,1 +1,28 @@
-{}
+{
+  "beforeInduction": {
+    "siteMarked": {
+      "ui:widget": "radio",
+      "ui:options": {
+        "inline": false
+      }
+    },
+    "knownAllergy": {
+      "ui:widget": "radio",
+      "ui:options": {
+        "inline": false
+      }
+    },
+    "difficultAirwayRisk": {
+      "ui:widget": "radio",
+      "ui:options": {
+        "inline": false
+      }
+    },
+    "bloodLossRisk": {
+      "ui:widget": "radio",
+      "ui:options": {
+        "inline": false
+      }
+    }
+  }
+}
