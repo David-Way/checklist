@@ -34,38 +34,44 @@
           }
         },
         "siteMarked": {
-          "type": "object",
           "title": "Is the site marked?",
+          "type": "string",
+          "enum": ["Yes", "Not applicable"]
+        },
+        "machineAndMedicationCheck": {
+          "type": "object",
+          "title": "Is the anaesthesia machine and medication check complete?",
           "properties": {
-            "siteMarkedYes": {
+            "machineAndMedicationYes": {
               "type": "boolean",
               "label": "Yes"
-            },
-            "siteMarkedNA": {
-              "type": "boolean",
-              "label": "Not applicable"
             }
           }
         },
-        "anaesthesiaCheckComplete": {
-          "type": "boolean",
-          "label": "Anaesthesia machine and medication check complete"
-        },
         "pulseOximeterFunctioning": {
-          "type": "boolean",
-          "label": "Pulse oximeter on patient and functioning"
+          "type": "object",
+          "title": "Is the pulse oximeter on the patient and functioning?",
+          "properties": {
+            "pulseOximeterFunctioningYes": {
+              "type": "boolean",
+              "label": "Yes"
+            }
+          }
         },
         "knownAllergy": {
-          "type": "boolean",
-          "label": "Known allergy"
+          "title": "Known allergy?",
+          "type": "string",
+          "enum": ["Yes", "No"]
         },
         "difficultAirwayRisk": {
-          "type": "boolean",
-          "label": "Difficult airway or aspiration risk (equipment/assistance available)"
+          "title": "Difficult airway or aspiration risk?",
+          "type": "string",
+          "enum": ["No", "Yes, and equipment/assistance available"]
         },
         "bloodLossRisk": {
-          "type": "boolean",
-          "label": "Risk of >500ml blood loss (7ml/kg in children) with appropriate access and fluids planned"
+          "title": "Difficult airway or aspiration risk?",
+          "type": "string",
+          "enum": ["No", "Yes, and two IVs/central access and fluids planned"]
         }
       }
     }
