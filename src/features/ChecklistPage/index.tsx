@@ -1,10 +1,19 @@
 import { getChecklist } from "@api";
-import { Container, FlexContainer, FormContainer, Header } from "@components";
+import {
+  Button,
+  Container,
+  FlexContainer,
+  FormContainer,
+  Header,
+} from "@components";
 import { useQuery } from "@tanstack/react-query";
+import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { deriveSectionData, getPreviousSectionTitle } from "./utils";
 
 const ChecklistPage: React.FC = () => {
   const { id } = useParams();
+  const [section, setSection] = useState(0);
   const { isPending, isError, data, error } = useQuery({
     queryKey: ["getChecklist"],
     queryFn: () => {
@@ -34,15 +43,46 @@ const ChecklistPage: React.FC = () => {
     );
   }
 
+  const derivedSectionData = deriveSectionData(data, section);
+
+  const isLastSection = section === data?.schema?.meta?.sections?.length - 1;
+
   return (
     <Container maxWidth="large" className="u-mh:auto">
       <FlexContainer spacing="16" direction="column" align="stretch">
         <Header title="Checklist" />
         <aside>
-          <Link to="/">‹ Back to all Checklists</Link>
+          {section === 0 ? (
+            <Link to="/">‹ Back to all Checklists</Link>
+          ) : (
+            <Link
+              to="/"
+              onClick={(event) => {
+                event.preventDefault();
+                setSection(section - 1);
+              }}
+            >
+              Back to {getPreviousSectionTitle(data.schema, section)}
+            </Link>
+          )}
         </aside>
         <main>
-          <FormContainer schema={data.schema} uiSchema={data.uiSchema} />
+          <FormContainer
+            schema={derivedSectionData.schema}
+            uiSchema={derivedSectionData.uiSchema}
+            onSubmit={() => {
+              if (!isLastSection) {
+                setSection(section + 1);
+              } else {
+                // submitAllData(formData);
+                alert("Submitting");
+              }
+            }}
+          >
+            <FlexContainer className="u-pt:24 u-ph:16" spacing="16">
+              <Button type="submit">{isLastSection ? "Submit" : "Next"}</Button>
+            </FlexContainer>
+          </FormContainer>
         </main>
       </FlexContainer>
     </Container>

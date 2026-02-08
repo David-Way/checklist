@@ -6,7 +6,6 @@ import { useState } from "react";
 
 import templates from "../../templates";
 import widgets from "../../widgets";
-// import checklistSchemaJSON from "../../schema/checklist-definition.schema.json";
 
 // Define the prop types using an interface
 export interface FormProps {
@@ -39,11 +38,12 @@ const schemaFallback: RJSFSchema = {
   },
 };
 
-// const checklistSchema: RJSFSchema = checklistSchemaJSON;
-// const checklistExample = checklistExampleJSON;
-const log = (type) => console.log.bind(console, type);
-
-const FormContainer: React.FC<FormProps> = ({ schema, uiSchema }) => {
+const FormContainer: React.FC<FormProps> = ({
+  schema,
+  uiSchema,
+  onSubmit,
+  children,
+}) => {
   const [formData, setFormData] = useState(null);
 
   return (
@@ -52,14 +52,17 @@ const FormContainer: React.FC<FormProps> = ({ schema, uiSchema }) => {
       uiSchema={uiSchema}
       className="c-form-container"
       validator={validator}
-      templates={templates}
+      templates={templates} // custom templates
+      formData={formData}
       onChange={(event) => setFormData(event.formData)}
-      onSubmit={log("submitted")}
-      onError={log("errors")}
+      onSubmit={onSubmit}
+      onError={(errors) => console.log("errors", errors)}
       widgets={widgets} //custom widgets
       liveOmit="onBlur"
       omitExtraData={true}
-    />
+    >
+      {children}
+    </Form>
   );
 };
 
