@@ -27,7 +27,7 @@ export function deriveSectionData(data: object, currentSection: number) {
 }
 
 export function getPreviousSectionTitle(data: object, currentSection: number) {
-  if (data?.schema?.meta?.sections === undefined) return null; // single section form
+  if (data?.meta?.sections === undefined) return null; // single section form
 
   const sectionKey = data?.meta?.sections[currentSection - 1];
   return data?.properties[sectionKey]?.title;
