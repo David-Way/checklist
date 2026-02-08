@@ -11,6 +11,10 @@ $-radio-border-radius: var(--borderRadius-full);
   padding-inline: var(--base-size-16);
   padding-block-end: var(--base-size-20);
 
+  &__label {
+    padding-inline: var(--base-size-8);
+  }
+
   &--inline {
     .c-radio {
       max-width: fit-content;
