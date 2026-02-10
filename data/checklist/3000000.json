@@ -1,5 +1,6 @@
 {
   "$id": "3000000",
+  "type": "object",
   "title": "WHO Surgical Safety Checklist",
   "description": "The World Health Organisation (WHO) first published their Surgical Safety Checklist in 2010. It's a series of five critical steps that surgical teams should perform before and after surgical procedures to reduce the risk of certain adverse events.",
   "meta": {
@@ -12,21 +13,12 @@
       "beforePatientLeavesOperatingRoom"
     ]
   },
-  "type": "object",
   "properties": {
     "beforeInduction": {
       "title": "Before Induction of Anaesthesia",
       "type": "object",
       "description": "Complete this section with at least the nurse and anaesthetist.",
-      "required": [
-        "identityConfirmed",
-        "siteMarked",
-        "machineAndMedicationCheck",
-        "pulseOximeterFunctioning",
-        "knownAllergy",
-        "difficultAirwayRisk",
-        "bloodLossRisk"
-      ],
+
       "properties": {
         "identityConfirmed": {
           "type": "object",
@@ -74,7 +66,7 @@
           "enum": ["No", "Yes, and equipment/assistance available"]
         },
         "bloodLossRisk": {
-          "title": "Difficult airway or aspiration risk?",
+          "title": "Risk of >500ml blood loss (7ml/kg in children)?",
           "type": "string",
           "enum": ["No", "Yes, and two IVs/central access and fluids planned"]
         }
@@ -83,34 +75,111 @@
     "beforeSkinIncision": {
       "title": "Before Skin Incision",
       "type": "object",
-      "description": "Complete this section with at least the nurse and anaesthetist.",
+      "description": "Complete this section with the nurse, anaesthetist and surgeon.",
       "required": ["newIdentityConfirmed"],
       "properties": {
-        "newIdentityConfirmed": {
+        "confirmTeamIntroduced": {
+          "type": "boolean",
+          "label": "Confirm all team members have introduced themselves by name and role."
+        },
+        "confirmPatientNameProcedureLocation": {
+          "type": "boolean",
+          "label": "Confirm the patient's name, procedure and where the incision will be made."
+        },
+        "confirmAntibioticProphylaxisGiven": {
+          "title": "Has antibiotic prophylaxis been given within the last 60 minutes?",
+          "type": "string",
+          "enum": ["Yes", "Not applicable"]
+        },
+        "anticipatedCriticalEvents": {
+          "title": "Anticipated Critical Events",
           "type": "object",
-          "title": "Has the patient confirmed his/her identity, site, procedure, and consent?",
           "properties": {
-            "identityConfirmedAgainYes": {
-              "type": "boolean",
-              "label": "Yes"
+            "anticipatedCriticalEventsToSurgeon": {
+              "type": "object",
+              "title": "To Surgeon:",
+              "properties": {
+                "anticipatedCriticalEventsToSurgeonCriticalSteps": {
+                  "type": "boolean",
+                  "label": "What are the critical or non-routine steps?"
+                },
+                "anticipatedCriticalEventsToSurgeonHowLong": {
+                  "type": "boolean",
+                  "label": "How long will the case take?"
+                },
+                "anticipatedCriticalEventsToSurgeonAnticipatedBloodLoss": {
+                  "type": "boolean",
+                  "label": "What is the anticipated blood loss?"
+                }
+              }
+            },
+            "anticipatedCriticalEventsToAnaesthetist": {
+              "type": "object",
+              "title": "To Anaesthetist:",
+              "properties": {
+                "anticipatedCriticalEventsToSurgeonCriticalSteps": {
+                  "type": "boolean",
+                  "label": "Are there any patient-specific concerns?"
+                }
+              }
+            },
+            "anticipatedCriticalEventsToNursingTeam": {
+              "type": "object",
+              "title": "To Nursing Team:",
+              "properties": {
+                "anticipatedCriticalEventsToNursingTeamSterilityConfirmed": {
+                  "type": "boolean",
+                  "label": "Has sterility (including indicator results) been confirmed?"
+                },
+                "anticipatedCriticalEventsToNursingTeamEquipmentConfirmed": {
+                  "type": "boolean",
+                  "label": "Are there equipment issues or any concerns?"
+                }
+              }
             }
           }
+        },
+        "confirmEssentialImagingDisplayed": {
+          "title": "Is essential imaging displayed?",
+          "type": "string",
+          "enum": ["Yes", "Not applicable"]
         }
       }
     },
     "beforePatientLeavesOperatingRoom": {
       "title": "Before Patient Leaves Operating Room",
       "type": "object",
-      "description": "Complete this section with at least the nurse and anaesthetist.",
-      "required": ["newIdentityConfirmed2"],
+      "description": "Complete this section with the nurse, anaesthetist and surgeon.",
       "properties": {
-        "newIdentityConfirmed2": {
+        "nurseVerbalConfirmation": {
           "type": "object",
-          "title": "Has the patient confirmed his/her identity, site, procedure, and consent?",
+          "title": "Nurse verbally confirms:",
           "properties": {
-            "identityConfirmedAgainYes": {
+            "procedureNamed": {
               "type": "boolean",
-              "label": "Yes"
+              "label": "The name of the procedure"
+            },
+            "completionOfInstrumentSpongeAndNeedleCounts": {
+              "type": "boolean",
+              "label": "Completion of instrument, sponge and needle counts"
+            },
+            "specimenLabelling": {
+              "type": "boolean",
+              "label": "Specimen labelling (read specimen labels aloud, including patient name)"
+            },
+            "equipmentProblemsToBeAddressed": {
+              "type": "boolean",
+              "label": "Whether there are any equipment problems to be addressed"
+            }
+          }
+        },
+        "keyConcernsForRecovery": {
+          "type": "object",
+          "title": "To Surgeon, Anaesthetist and Nurse:",
+          "properties": {
+            "procedureNamed": {
+              "type": "boolean",
+              "label": "What are the key concerns for recovery and management of this patient?"
             }
           }
         }

@@ -24,5 +24,19 @@
         "inline": false
       }
     }
+  },
+  "beforeSkinIncision": {
+    "confirmAntibioticProphylaxisGiven": {
+      "ui:widget": "radio",
+      "ui:options": {
+        "inline": false
+      }
+    },
+    "confirmEssentialImagingDisplayed": {
+      "ui:widget": "radio",
+      "ui:options": {
+        "inline": false
+      }
+    }
   }
 }
