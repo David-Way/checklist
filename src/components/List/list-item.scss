@@ -63,6 +63,8 @@
         text-underline-offset: 0;
         text-decoration-thickness: 1px;
         text-decoration-color: var(--fgColor-link);
+        line-height: 1.3;
+        padding-block: var(--base-size-2);
 
         &:hover {
           text-decoration: underline;

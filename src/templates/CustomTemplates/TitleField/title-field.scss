@@ -10,4 +10,9 @@
   &__required-indicator {
     color: var(--fgColor-muted);
   }
+
+  &--root {
+    @include mixins.type-h1();
+    padding-inline: 0;
+  }
 }

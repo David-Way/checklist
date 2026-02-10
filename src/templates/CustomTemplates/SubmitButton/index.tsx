@@ -8,7 +8,7 @@ export default function SubmitButton(props: SubmitButtonProps) {
     return null;
   }
   return (
-    <FlexContainer className="u-pt:24 u-ph:16">
+    <FlexContainer className="u-pv:24 u-ph:16">
       <Button type="submit">Submit</Button>
     </FlexContainer>
   );
