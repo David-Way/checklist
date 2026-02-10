@@ -44,13 +44,11 @@ const ChecklistPage: React.FC = () => {
   }
 
   const derivedSectionData = deriveSectionData(data, section);
-
   const isLastSection = section === data?.schema?.meta?.sections?.length - 1;
 
   return (
     <Container maxWidth="large" className="u-mh:auto">
       <FlexContainer spacing="16" direction="column" align="stretch">
-        <Header title="Checklist" />
         <aside>
           {section === 0 ? (
             <Link to="/">‹ Back to all Checklists</Link>
@@ -60,6 +58,7 @@ const ChecklistPage: React.FC = () => {
               onClick={(event) => {
                 event.preventDefault();
                 setSection(section - 1);
+                window.scroll({ top: 0 });
               }}
             >
               Back to {getPreviousSectionTitle(data.schema, section)}
@@ -73,13 +72,14 @@ const ChecklistPage: React.FC = () => {
             onSubmit={() => {
               if (!isLastSection) {
                 setSection(section + 1);
+                window.scroll({ top: 0 });
               } else {
                 // submitAllData(formData);
-                alert("Submitting");
+                alert("Demonstration Software: Submitting");
               }
             }}
           >
-            <FlexContainer className="u-pt:24 u-ph:16" spacing="16">
+            <FlexContainer className="u-pv:24 u-ph:16" spacing="16">
               <Button type="submit">{isLastSection ? "Submit" : "Next"}</Button>
             </FlexContainer>
           </FormContainer>

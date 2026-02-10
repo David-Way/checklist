@@ -55,7 +55,13 @@ const ChecklistSelectPage: React.FC = () => {
                 <ListItem key={checklist.$id} link={true}>
                   <Link to={`/cl/${checklist.$id}`}>
                     <FlexContainer direction="column" spacing="4">
-                      <h2>{checklist?.title}</h2>
+                      <h2
+                        style={{
+                          viewTransitionName: `view-transition-${checklist?.$id}`,
+                        }}
+                      >
+                        {checklist?.title}
+                      </h2>
                       <p>{checklist?.description}</p>
 
                       {tags && (

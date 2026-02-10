@@ -62,6 +62,14 @@
 
 ---
 
+
+## Technical Decisions
+
+Multi-section forms are a flat single schema where each section is wrapped in it's own object. The schema.meta.sections array of strings configuration then allows the renderer to interpret those objects as their own sections. The array should contain the names of the sections.
+TODO: investigate if this could work as a simple boolean, where if true, the top level objects become their own sections. This could make it difficult to maintain order though (as map/object keys do not have an order).
+
+---
+
 ## Phased Development Plan: YAML-Driven Conditional Checklist App
 
 ### Assumptions (Explicit)

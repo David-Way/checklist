@@ -42,6 +42,7 @@ export default function ObjectFieldTemplate<
     title,
     uiSchema,
   } = props;
+  console.log("ObjectFieldTemplate PROPS", props);
   const options = getUiOptions<T, S, F>(uiSchema);
   const TitleFieldTemplate = getTemplate<"TitleFieldTemplate", T, S, F>(
     "TitleFieldTemplate",
@@ -62,6 +63,8 @@ export default function ObjectFieldTemplate<
     !schema.properties &&
     properties.length === 0;
 
+  const isRootObject = fieldPathId?.$id === "root";
+
   if (isPureUnionSchema) {
     return null;
   }
@@ -75,11 +78,25 @@ export default function ObjectFieldTemplate<
     <Stack
       as="fieldset"
       spacing="form"
-      className={classNames(["t-object-field", className])}
+      className={classNames([
+        "t-object-field",
+        {
+          "t-object-field--root": isRootObject,
+        },
+        className,
+      ])}
       id={fieldPathId.$id}
     >
       {title && (
         <TitleFieldTemplate
+          {...(isRootObject
+            ? {
+                style: {
+                  viewTransitionName: `view-transition-${schema?.$id}`,
+                },
+              }
+            : {})}
+          isRootObject={isRootObject}
           id={titleId(fieldPathId)}
           title={title}
           required={required}
