@@ -1,6 +1,7 @@
 .t-description-field {
-  padding: var(--base-size-8);
+  padding-block: var(--base-size-8);
+  padding-inline: var(--base-size-12);
   color: var(--fgColor-muted);
   background-color: var(--bgColor-muted);
-  border-radius: var(--borderRadius-small);
+  border-radius: var(--borderRadius-medium);
 }

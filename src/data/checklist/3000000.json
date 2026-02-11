@@ -18,7 +18,6 @@
       "title": "Before Induction of Anaesthesia",
       "type": "object",
       "description": "Complete this section with at least the nurse and anaesthetist.",
-
       "properties": {
         "identityConfirmed": {
           "type": "object",
