@@ -15,8 +15,8 @@ if (!shell.test('-d', checklistDataDir)) {
     shell.exit(0);
 }
 
-// find all checklist objects, excluding the index/output file
-const checklistFiles = shell.ls(`${checklistDataDir}/*json`).filter(file => file !== checklistOutputFile);
+// find all checklist objects, excluding the index/output file and ui-schema files
+const checklistFiles = shell.ls(`${checklistDataDir}/!(*ui-schema)*json`).filter(file => file !== checklistOutputFile);
 if (checklistFiles?.length === 0) {
     console.warn('No Checklist files to process');
 }
