@@ -1,40 +1,187 @@
 {
   "$id": "2000000",
-  "title": "A registration form",
-  "description": "A simple form example.",
+  "title": "15 Minute Kettlebell Workout",
+  "description": "An alternating weekly kettlebell workout program.",
   "meta": {
     "author": "David Way",
-    "lastUpdated": "06/01/2026",
-    "tags": ["test", "example", "placeholder"]
+    "lastUpdated": "11/02/2026",
+    "tags": ["workout"]
   },
   "type": "object",
   "properties": {
-    "firstName": {
-      "type": "array",
-      "title": "First name",
-      "uniqueItems": true,
-      "items": {
-        "type": "string",
-        "enum": ["A", "B", "C", "D"]
-      }
+    "Stage": {
+      "type": "string",
+      "enum": ["Week 1", "Week 2"]
+    },
+    "Day": {
+      "type": "string",
+      "title": "Day",
+      "description": "For an example, Day 1 - Monday, Day 2 - Wednesday, Day 3 - Friday",
+      "enum": ["One", "Three", "Five"]
     }
   },
-  "dependencies": {
-    "firstName": {
-      "oneOf": [
-        {
-          "properties": {
-            "firstName": {
-              "contains": {
-                "const": "A"
+  "required": ["Stage", "Day"],
+  "allOf": [
+    {
+      "if": {
+        "anyOf": [
+          {
+            "properties": {
+              "Stage": {
+                "const": "Week 1"
+              },
+              "Day": {
+                "enum": ["One", "Five"]
               }
             },
-            "description": {
-              "type": "string"
+            "required": ["Stage", "Day"]
+          },
+          {
+            "properties": {
+              "Stage": {
+                "const": "Week 2"
+              },
+              "Day": {
+                "const": "Three"
+              }
+            },
+            "required": ["Stage", "Day"]
+          }
+        ]
+      },
+      "then": {
+        "properties": {
+          "workoutACircuit1": {
+            "type": "object",
+            "title": "Strength focus",
+            "description": "Circuit 1",
+            "properties": {
+              "squat1": {
+                "type": "boolean",
+                "label": "Squat — 8-12 reps",
+                "description": "Rest 60 seconds"
+              },
+              "cleanAndPress1": {
+                "type": "boolean",
+                "label": "Clean and press — 6-12 reps",
+                "description": "Rest 60 seconds"
+              },
+              "kettlebellRow1": {
+                "type": "boolean",
+                "label": "Kettlebell rows — 10-15 reps ",
+                "description": "Rest 90 seconds"
+              }
+            }
+          },
+          "workoutACircuit2": {
+            "type": "object",
+            "title": "Strength focus",
+            "description": "Circuit 2",
+            "properties": {
+              "squat1": {
+                "type": "boolean",
+                "label": "Squat — 8-12 reps",
+                "description": "Rest 60 seconds"
+              },
+              "cleanAndPress1": {
+                "type": "boolean",
+                "label": "Clean and press — 6-12 reps",
+                "description": "Rest 60 seconds"
+              },
+              "kettlebellRow1": {
+                "type": "boolean",
+                "label": "Kettlebell rows — 10-15 reps ",
+                "description": "Rest 90 seconds"
+              }
+            }
+          },
+          "workoutACircuit3": {
+            "type": "object",
+            "title": "Strength focus",
+            "description": "Circuit 3",
+            "properties": {
+              "squat1": {
+                "type": "boolean",
+                "label": "Squat — 8-12 reps",
+                "description": "Rest 60 seconds"
+              },
+              "cleanAndPress1": {
+                "type": "boolean",
+                "label": "Clean and press — 6-12 reps",
+                "description": "Rest 60 seconds"
+              },
+              "kettlebellRow1": {
+                "type": "boolean",
+                "label": "Kettlebell rows — 10-15 reps",
+                "description": "Rest 90 seconds"
+              }
             }
           }
-        }
-      ]
+        },
+        "required": ["workoutACircuit1", "workoutACircuit2", "workoutACircuit3"]
+      },
+      "else": {
+        "properties": {
+          "workoutB": {
+            "type": "object",
+            "title": "Conditioning & Power focus",
+            "description": "Start each exercise Every Minute On the Minute (EMOM).",
+            "properties": {
+              "kettlebellRow1": {
+                "type": "boolean",
+                "label": "Kettlebell rows — 10-15 reps",
+                "description": "Rest until end of minute"
+              },
+              "kettlebellThruster1": {
+                "type": "boolean",
+                "label": "Kettlebell thruster — 5-8 reps",
+                "description": "Rest until end of minute"
+              },
+              "kettlebellRow2": {
+                "type": "boolean",
+                "label": "Kettlebell rows — 10-15 reps",
+                "description": "Rest until end of minute"
+              },
+              "kettlebellThruster2": {
+                "type": "boolean",
+                "label": "Kettlebell thruster — 5-8 reps",
+                "description": "Rest until end of minute"
+              },
+              "kettlebellRow3": {
+                "type": "boolean",
+                "label": "Kettlebell rows — 10-15 reps",
+                "description": "Rest until end of minute"
+              },
+              "kettlebellThruster3": {
+                "type": "boolean",
+                "label": "Kettlebell thruster — 5-8 reps",
+                "description": "Rest until end of minute"
+              },
+              "kettlebellRow4": {
+                "type": "boolean",
+                "label": "Kettlebell rows — 10-15 reps",
+                "description": "Rest until end of minute"
+              },
+              "kettlebellThruster5": {
+                "type": "boolean",
+                "label": "Kettlebell thruster — 5-8 reps",
+                "description": "Rest until end of minute"
+              },
+              "kettlebellRow6": {
+                "type": "boolean",
+                "label": "Kettlebell rows — 10-15 reps",
+                "description": "Rest until end of minute"
+              },
+              "kettlebellThruster6": {
+                "type": "boolean",
+                "label": "Kettlebell thruster — 5-8 reps",
+                "description": "Rest until end of minute"
+              }
+            }
+          }
+        },
+        "required": ["workoutB"]
+      }
     }
-  }
+  ]
 }
