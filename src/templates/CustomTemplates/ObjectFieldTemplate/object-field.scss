@@ -3,7 +3,7 @@
   margin: 0;
   border: none;
   padding-block-start: var(--base-size-8);
-  padding-inline: 0;
+  padding-inline: var(--base-size-8);
   padding-block-end: var(--base-size-20);
 }
 
@@ -12,8 +12,13 @@
   border: 1px solid var(--borderColor-neutral-muted);
   border-radius: calc(var(--borderRadius-small) + var(--base-size-20));
   padding-block-start: var(--base-size-8);
-  padding-inline: var(--base-size-16);
+  padding-inline: var(--base-size-8);
   padding-block-end: var(--base-size-20);
+}
+
+.t-object-field .t-object-field .t-object-field {
+  border: none;
+  padding-inline: 0;
 }
 
 @media (min-width: 48rem) {
