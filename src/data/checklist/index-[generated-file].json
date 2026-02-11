@@ -10,9 +10,7 @@
       "meta": {
         "author": "David Way",
         "lastUpdated": "17/01/2026",
-        "tags": [
-          "workout"
-        ]
+        "tags": ["workout"]
       }
     },
     {
@@ -22,9 +20,7 @@
       "meta": {
         "author": "David Way",
         "lastUpdated": "11/02/2026",
-        "tags": [
-          "workout"
-        ]
+        "tags": ["workout"]
       }
     },
     {
@@ -34,10 +30,7 @@
       "meta": {
         "author": "David Way",
         "lastUpdated": "26/01/2026",
-        "tags": [
-          "medical",
-          "safety"
-        ],
+        "tags": ["medical", "safety"],
         "sections": [
           "beforeInduction",
           "beforeSkinIncision",
