@@ -11,15 +11,18 @@
   "properties": {
     "Stage": {
       "type": "string",
-      "enum": ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5", "Week 6"]
+      "enum": ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5", "Week 6"],
+      "default": "Week 1"
     },
     "Day": {
       "type": "string",
-      "enum": ["Day 1", "Day 2", "Day 3"]
+      "enum": ["Day 1", "Day 2", "Day 3"],
+      "default": "Day 1"
     },
     "Intensity": {
       "type": "string",
-      "enum": ["Beginner", "Intermediate", "Experienced"]
+      "enum": ["Beginner", "Intermediate", "Experienced"],
+      "default": "Beginner"
     }
   },
   "required": ["Stage", "Day", "Intensity"],

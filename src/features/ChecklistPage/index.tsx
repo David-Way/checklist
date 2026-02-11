@@ -79,7 +79,7 @@ const ChecklistPage: React.FC = () => {
               }
             }}
           >
-            <FlexContainer className="u-pv:24 u-ph:16" spacing="16">
+            <FlexContainer className="u-pv:24 u-ph:8" spacing="16">
               <Button type="submit">{isLastSection ? "Submit" : "Next"}</Button>
             </FlexContainer>
           </FormContainer>
