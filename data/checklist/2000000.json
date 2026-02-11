@@ -11,13 +11,15 @@
   "properties": {
     "Stage": {
       "type": "string",
-      "enum": ["Week 1", "Week 2"]
+      "enum": ["Week 1", "Week 2"],
+      "default": "Week 1"
     },
     "Day": {
       "type": "string",
       "title": "Day",
       "description": "For an example, Day 1 - Monday, Day 2 - Wednesday, Day 3 - Friday",
-      "enum": ["One", "Three", "Five"]
+      "enum": ["One", "Three", "Five"],
+      "default": "One"
     }
   },
   "required": ["Stage", "Day"],
