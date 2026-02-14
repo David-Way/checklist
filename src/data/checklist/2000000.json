@@ -70,7 +70,7 @@
               },
               "kettlebellRow1": {
                 "type": "boolean",
-                "label": "Kettlebell rows — 10-15 reps ",
+                "label": "Kettlebell swings — 25-30 reps",
                 "description": "Rest 90 seconds"
               }
             }
@@ -92,7 +92,7 @@
               },
               "kettlebellRow1": {
                 "type": "boolean",
-                "label": "Kettlebell rows — 10-15 reps ",
+                "label": "Kettlebell swings — 25-30 reps",
                 "description": "Rest 90 seconds"
               }
             }
@@ -114,7 +114,7 @@
               },
               "kettlebellRow1": {
                 "type": "boolean",
-                "label": "Kettlebell rows — 10-15 reps",
+                "label": "Kettlebell swings — 25-30 reps",
                 "description": "Rest 90 seconds"
               }
             }
@@ -131,7 +131,7 @@
             "properties": {
               "kettlebellRow1": {
                 "type": "boolean",
-                "label": "Kettlebell rows — 10-15 reps",
+                "label": "Kettlebell swings — 25-30 reps",
                 "description": "Rest until end of minute"
               },
               "kettlebellThruster1": {
@@ -141,7 +141,7 @@
               },
               "kettlebellRow2": {
                 "type": "boolean",
-                "label": "Kettlebell rows — 10-15 reps",
+                "label": "Kettlebell swings — 25-30 reps",
                 "description": "Rest until end of minute"
               },
               "kettlebellThruster2": {
@@ -151,7 +151,7 @@
               },
               "kettlebellRow3": {
                 "type": "boolean",
-                "label": "Kettlebell rows — 10-15 reps",
+                "label": "Kettlebell swings — 25-30 reps",
                 "description": "Rest until end of minute"
               },
               "kettlebellThruster3": {
@@ -161,7 +161,7 @@
               },
               "kettlebellRow4": {
                 "type": "boolean",
-                "label": "Kettlebell rows — 10-15 reps",
+                "label": "Kettlebell swings — 25-30 reps",
                 "description": "Rest until end of minute"
               },
               "kettlebellThruster5": {
@@ -171,7 +171,7 @@
               },
               "kettlebellRow6": {
                 "type": "boolean",
-                "label": "Kettlebell rows — 10-15 reps",
+                "label": "Kettlebell swings — 25-30 reps",
                 "description": "Rest until end of minute"
               },
               "kettlebellThruster6": {
